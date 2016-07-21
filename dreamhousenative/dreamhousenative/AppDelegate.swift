@@ -7,12 +7,76 @@
 //
 
 import UIKit
+import SalesforceSDKCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    //salesforce auth
+    let RemoteAccessConsumerKey = "3MVG9uudbyLbNPZORlx5pdNbXe.eo_dVK0WlmqUuSbXszEw7gEIKzXkMdZC2IRCPPAJZYZkdeB.Ed0JDG8YSv";
+   //let OAuthRedirectURI        = "https://dreamhousenative-developer-edition.na30.force.com/services/authcallback/00D36000000kFKBEA2/DreamTwitter";
+  // let OAuthRedirectURI        = "https://login.salesforce.com/services/authcallback/00D36000000kFKBEA2/DreamTwitter";
+    let OAuthRedirectURI = "sfdc://success"
+  let scopes = ["full"];
+   
+    
     var window: UIWindow?
 
+
+
+    //MARK: Salesforce auth stuff
+    override
+    init()
+    {
+        super.init()
+        
+        SFLogger.setLogLevel(SFLogLevel.Debug)
+        
+        
+       SalesforceSDKManager.sharedManager().connectedAppId = RemoteAccessConsumerKey
+        SalesforceSDKManager.sharedManager().connectedAppCallbackUri = OAuthRedirectURI
+        SalesforceSDKManager.sharedManager().authScopes = scopes
+        SalesforceSDKManager.sharedManager().postLaunchAction = {
+            [unowned self] (launchActionList: SFSDKLaunchAction) in
+            let launchActionString = SalesforceSDKManager.launchActionsStringRepresentation(launchActionList)
+            self.log(SFLogLevel.Info, msg:"Post-launch: launch actions taken: \(launchActionString)");
+            print("ROOT IS "+(self.window?.rootViewController.debugDescription)!)
+            
+        }
+        SalesforceSDKManager.sharedManager().launchErrorAction = {
+            [unowned self] (error: NSError?, launchActionList: SFSDKLaunchAction) in
+            if let actualError = error {
+                self.log(SFLogLevel.Error, msg:"Error during SDK launch: \(actualError.localizedDescription)")
+            } else {
+                self.log(SFLogLevel.Error, msg:"Unknown error during SDK launch.")
+            }
+            
+        }
+        SalesforceSDKManager.sharedManager().postLogoutAction = {
+            [unowned self] in
+            self.handleSdkManagerLogout()
+        }
+        SalesforceSDKManager.sharedManager().switchUserAction = {
+            [unowned self] (fromUser: SFUserAccount?, toUser: SFUserAccount?) -> () in
+            self.handleUserSwitch(fromUser, toUser: toUser)
+        }
+        
+    }
+    
+    
+    func handleSdkManagerLogout()
+    {
+        //
+    }
+    
+    func handleUserSwitch(fromUser: SFUserAccount?, toUser: SFUserAccount?)
+    {
+        //
+    }
+
+    
+    
+    //MARK: lifecycle events
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

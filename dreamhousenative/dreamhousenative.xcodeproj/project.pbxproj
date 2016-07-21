@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1500F81D415F2200C0AF61 /* auth-setup.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A1500F71D415F2200C0AF61 /* auth-setup.txt */; };
 		C4094C593EF70EC62B33FFDD /* Pods_dreamhousenative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2156374A2CB1C0E3E68EAF31 /* Pods_dreamhousenative.framework */; };
 		E7362F1F1D405D41006E661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F1E1D405D41006E661F /* AppDelegate.swift */; };
 		E7362F211D405D41006E661F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F201D405D41006E661F /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		2156374A2CB1C0E3E68EAF31 /* Pods_dreamhousenative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dreamhousenative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A1500F71D415F2200C0AF61 /* auth-setup.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "auth-setup.txt"; sourceTree = "<group>"; };
 		A14A3CCDF77D46BEC105A40C /* Pods-dreamhousenative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamhousenative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dreamhousenative/Pods-dreamhousenative.debug.xcconfig"; sourceTree = "<group>"; };
 		A565D14EC170378E2A43F2BD /* Pods-dreamhousenative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamhousenative.release.xcconfig"; path = "Pods/Target Support Files/Pods-dreamhousenative/Pods-dreamhousenative.release.xcconfig"; sourceTree = "<group>"; };
 		E7362F1B1D405D41006E661F /* dreamhousenative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreamhousenative.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 				E7362F371D412CB4006E661F /* WelcomeTourViewController.swift */,
 				E7362F391D41307C006E661F /* Media.xcassets */,
 				E7362F3B1D4136F4006E661F /* AppDefaults.swift */,
+				5A1500F71D415F2200C0AF61 /* auth-setup.txt */,
 			);
 			path = dreamhousenative;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1500F81D415F2200C0AF61 /* auth-setup.txt in Resources */,
 				E7362F291D405D41006E661F /* LaunchScreen.storyboard in Resources */,
 				E7362F3A1D41307C006E661F /* Media.xcassets in Resources */,
 				E7362F241D405D41006E661F /* Main.storyboard in Resources */,
