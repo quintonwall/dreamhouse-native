@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Icon-72.png",
+      "filename" : "shoprates.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Icon-72@2x.png",
+      "filename" : "shoprates@2x.png",
       "scale" : "2x"
     },
     {

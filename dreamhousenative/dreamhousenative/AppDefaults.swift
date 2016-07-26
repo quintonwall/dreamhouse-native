@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SalesforceSDKCore
 
 class AppDefaults {
     
@@ -16,4 +17,8 @@ class AppDefaults {
         static let dreamhouseLightBlue: UIColor = UIColor(netHex: 0x00A3DA)
         static let dreamhouseDarkBlue: UIColor = UIColor(netHex: 0x005385)
         static let dreamhouseBlreen: UIColor = UIColor(netHex: 0x00778E)
+    
+    static func isLoggedIn() -> Bool {
+        return SFAuthenticationManager.sharedManager().haveValidSession
+    }
 }
