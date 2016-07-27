@@ -30,7 +30,8 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.propertyImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!))
+        //self.propertyImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!) )
+        self.propertyImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!), placeholderImage: UIImage(named: "full-size-icon"))
         
        // titleView.layer.borderWidth = 1
         //titleView.layer.borderColor = AppDefaults.dreamhouseBlreen.CGColor
