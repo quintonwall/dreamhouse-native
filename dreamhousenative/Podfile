@@ -1,7 +1,7 @@
 platform :ios, '9.0'
 use_frameworks!
 
-target 'dreamhousenative' do
+target 'DHNative' do
 source 'https://github.com/forcedotcom/SalesforceMobileSDK-iOS-Specs.git' 
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/goinstant/pods-specs-public'
@@ -20,5 +20,6 @@ pod "GoogleMaterialIconFont"
 pod "DGElasticPullToRefresh"
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 pod 'SwiftyJSON'
+pod 'SDWebImage', '~>3.8'
 
 end

@@ -7,39 +7,47 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PropertiesTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var propertyImage: UIView!
+    @IBOutlet weak var propertyImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cityStateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    
+    var property : Property?
     
     var propertyId : String!
     
     var propertyImageUrl = "" {
         didSet {
-            loadImage(propertyImageUrl)
+          //use SDWebImage for super fast async image loading and caching.
+            //this looks awesome too for animated gif support: https://github.com/kaishin/Gifu
+            self.propertyImage.sd_setImageWithURL(NSURL(string: propertyImageUrl), placeholderImage: UIImage(named: "full-size-icon"))
             
         }
     }
     
-    private func loadImage(url:String) {
-        // load image
-        let image_url:String = url
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            let url:NSURL = NSURL(string:image_url)!
-            let data:NSData = NSData(contentsOfURL: url)!
-            
-            // update ui
-            dispatch_async(dispatch_get_main_queue()) {
-                let image = UIImage(data: data)!
-                self.propertyImage = UIImageView(image: image)
-            }
-        }
+    override func awakeFromNib() {
+        self.propertyImage.layer.cornerRadius = 3.0
+        self.propertyImage.layer.masksToBounds = true
+         self.propertyImage.layer.borderColor = AppDefaults.dreamhouseGreen.CGColor
+        self.propertyImage.layer.borderWidth = 1.0
         
+        self.selectedBackgroundView?.backgroundColor = AppDefaults.dreamhouseLightBlue
+
     }
+    
+    func getDictionaryToSaveFavorite() -> NSDictionary {
+        let d : NSDictionary = [
+            "Property__c" : propertyId!,
+            "User__c" : AppDefaults.getUserId()
+        ]
+        
+        return d
+    
+    }
+    
 }

@@ -1,6 +1,6 @@
 //
 //  JSON.swift
-//  dreamhousenative
+//  SwiftyJSON extension to support Saleforce field types
 //
 //  Created by QUINTON WALL on 7/26/16.
 //  Copyright © 2016 Quinton Wall. All rights reserved.
@@ -41,13 +41,14 @@ extension JSON {
     
     public var currency: String? {
         get {
-            if let str = self.string {
+            if let str = self.int {
                 let formatter = NSNumberFormatter()
                 formatter.numberStyle = .CurrencyStyle
+                formatter.maximumFractionDigits = 0
                 // formatter.locale = NSLocale.currentLocale() // This is the default
-                let ccy = formatter.numberFromString(str)
+                let ccy : String = formatter.stringFromNumber(str)!
                 
-                return ccy?.stringValue
+                return ccy
 
             }
             return nil

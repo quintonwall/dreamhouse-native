@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // let OAuthRedirectURI        = "https://login.salesforce.com/services/authcallback/00D36000000kFKBEA2/DreamTwitter";
     let OAuthRedirectURI = "sfdc://success"
     let scopes = ["full"];
+    
+    //dreamhouse@demo2016.com
    
     
     var window: UIWindow?

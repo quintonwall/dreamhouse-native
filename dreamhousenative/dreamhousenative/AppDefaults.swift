@@ -21,4 +21,8 @@ class AppDefaults {
     static func isLoggedIn() -> Bool {
         return SFAuthenticationManager.sharedManager().haveValidSession
     }
+    
+    static func getUserId() -> String {
+        return SFUserAccountManager.sharedInstance().currentUser.accountIdentity.userId
+    }
 }

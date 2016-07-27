@@ -49,5 +49,7 @@ d. delete any existing app you have deployed on the simulator to remove keys sto
 e. Click run and you should now be able to use social sign-in to auto create a community user right from a native app.
 
 
-POST-SETUP
-Remember that any object you access through your mobile app, needs to be included in the community user profile to access it via the REST APIs
+Custom Object Permissions
+1. Update custom object permissions (setup -> Profiles --> the custom profile you created in step 1 above) to any objects you want to access from your mobile app
+2. Update field level security on those objects (setup --> security controls -> Field Accessibilty --> View by Profiles.)
+

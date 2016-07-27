@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DGElasticPullToRefresh
 import ENSwiftSideMenu
 import SalesforceRestAPI
 import SwiftyJSON
@@ -19,8 +18,15 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
   
     var responseJSON: JSON = JSON("")
     var recordCount: Int = 0
+    var selectedProperty: Property?
 
-    
+    //adding our own refresh control because we are not in a UITableViewController
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(PropertiesViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        return refreshControl
+    }()
     
     // MARK: -
     // MARK: Side Menu
@@ -45,25 +51,21 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         tableView.separatorColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 231/255.0, alpha: 1.0)
         tableView.backgroundColor = UIColor(red: 250/255.0, green: 250/255.0, blue: 251/255.0, alpha: 1.0)
+        self.tableView.addSubview(self.refreshControl)
         view.addSubview(tableView)
-        
-        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
-        loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
-        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                self?.fetchProperties()
-                self?.tableView.dg_stopLoading()
-            })
-            }, loadingView: loadingView)
-        //tableView.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
-        tableView.dg_setPullToRefreshFillColor(AppDefaults.dreamhouseGreen)
-        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
         
         fetchProperties()
     }
     
-    deinit {
-        tableView.dg_removePullToRefresh()
+    
+   // deinit {
+    //    tableView.dg_removePullToRefresh()
+  //  }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        fetchProperties()
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     // MARK: -
@@ -73,7 +75,8 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         let sharedInstance = SFRestAPI.sharedInstance()
         
         //NOTE: Since we are using community users, make sure the profile in the org has Property__c included!
-        let query = String("select City__c, Id, Name, Picture_IMG__c, Price__c, State__c, Thumbnail__c, Thumbnail_IMG__c, Title__c, Zip__c from Property__c")
+        //fetch everything we need here for the details view as well. This way we avoid a second round trip to the server.
+        let query = String("select Address__c, Baths__c, Beds__c, Broker__c, Broker__r.Name, Broker__r.Picture__c, City__c, Description__c, Id, Location__c, Name, OwnerId, Picture__c, Price__c, State__c, Thumbnail__c, Title__c, Zip__c from Property__c")
         
         
         sharedInstance.performSOQLQuery(query, failBlock: { error in
@@ -88,8 +91,8 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
             
         }) { response in  //success
             
+           self.responseJSON = JSON(response)
             
-            self.responseJSON = JSON(response)
             
             if let count = self.responseJSON["totalSize"].int {
                 self.recordCount = count
@@ -105,14 +108,47 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
                 
             }
             
-            
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView?.reloadData()
-            }
+           }
         
         }
     }
-   
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PropertyDetails" {
+            let detailsViewController = segue.destinationViewController as! PropertyDetailsViewController
+            detailsViewController.property = self.selectedProperty
+        }
+    }
+    
+    func prepProperty(jsonRecord: JSON) -> Property {
+        let p : Property = Property()
+       //print(jsonRecord)
+        //propertyInfo
+        p.propertyId = jsonRecord["Id"].string
+        p.address = jsonRecord["Address__c"].string
+        p.city = jsonRecord["Id"].string
+        p.state = jsonRecord["State__c"].string
+        p.description = jsonRecord["Description__c"].string
+        p.pictureImageURL = jsonRecord["Picture__c"].string
+        p.price = jsonRecord["Price__c"].currency
+        p.thumbnailImageURL = jsonRecord["Thumbnail__c"].string
+        p.title = jsonRecord["Title__c"].string
+        p.zip = jsonRecord["Zip__c"].string
+        p.numberOfBaths = jsonRecord["Baths__c"].int
+        p.numberOfBeds = jsonRecord["Beds__c"].int
+        p.longitude = jsonRecord["Location__c"]["longitude"].double
+        p.latitude = jsonRecord["Location__c"]["latitude"].double
+        
+        //broker info
+        p.brokerId = jsonRecord["Broker__c"].string
+        p.brokerName = jsonRecord["Broker__r"]["Name"].string
+        p.brokerImageURL  = jsonRecord["Broker__r"]["Picture__c"].string
+        
+        return p
+        
+    }
 }
 
 // MARK: -
@@ -133,17 +169,61 @@ extension PropertiesViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PropertiesTableViewCell
-        cell.propertyImageUrl = responseJSON["records"][indexPath.row]["Thumbnail_IMG__c"].string!
+        let cell = tableView.dequeueReusableCellWithIdentifier("PropertyCell", forIndexPath: indexPath) as! PropertiesTableViewCell
+        
+        
+        cell.property = self.prepProperty(responseJSON["records"][indexPath.row])
+        
+        cell.propertyImageUrl = responseJSON["records"][indexPath.row]["Thumbnail__c"].string!
+        
         cell.propertyId = responseJSON["records"][indexPath.row]["Id"].string
         cell.titleLabel.text = responseJSON["records"][indexPath.row]["Title__c"].string
         cell.cityStateLabel.text = responseJSON["records"][indexPath.row]["City__c"].string! + ", "+responseJSON["records"][indexPath.row]["State__c"].string!
-        cell.priceLabel.text = responseJSON["records"][indexPath.row]["Price"].currency
+        
+        cell.priceLabel.text = responseJSON["records"][indexPath.row]["Price__c"].currency
         return cell
         
 
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+       
+        
+        let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
+            
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! PropertiesTableViewCell
+            
+              print("SELECTED PROP ID:\(cell.propertyId)")
+            let d : NSDictionary = cell.getDictionaryToSaveFavorite()
+            let request = SFRestAPI.sharedInstance().requestForCreateWithObjectType("Favorite__c", fields: d as [NSObject : AnyObject])
+            
+            SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
+                dispatch_async(dispatch_get_main_queue()) {
+                    tableView.setEditing(false, animated: true)
+                }
+                let alertController = UIAlertController(title: "Dreamhouse", message:   "Something went wrong: \(error)", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+            }) {response in
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    tableView.setEditing(false, animated: true)
+                }
+                let alertController = UIAlertController(title: "Dreamhouse", message:   "Added to favorites.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            
+            }
+        }
+        favorite.backgroundColor = AppDefaults.dreamhouseDarkBlue
+        
+        
+        
+        return [favorite]
+    }
 }
 
 // MARK: -
@@ -152,7 +232,10 @@ extension PropertiesViewController: UITableViewDataSource {
 extension PropertiesViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PropertiesTableViewCell
+         selectedProperty = cell.property
+        performSegueWithIdentifier("PropertyDetails", sender: self)
+        
     }
     
 }
