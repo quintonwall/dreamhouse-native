@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    //let OAuthRedirectURI        = "https://dreamhousenative-developer-edition.na30.force.com/services/authcallback/00D36000000kFKBEA2/DreamTwitter";
   // let OAuthRedirectURI        = "https://login.salesforce.com/services/authcallback/00D36000000kFKBEA2/DreamTwitter";
     let OAuthRedirectURI = "sfdc://success"
-  let scopes = ["full"];
+    let scopes = ["full"];
    
     
     var window: UIWindow?
@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        SalesforceSDKManager.sharedManager().connectedAppId = RemoteAccessConsumerKey
         SalesforceSDKManager.sharedManager().connectedAppCallbackUri = OAuthRedirectURI
         SalesforceSDKManager.sharedManager().authScopes = scopes
+       
         SalesforceSDKManager.sharedManager().postLaunchAction = {
             [unowned self] (launchActionList: SFSDKLaunchAction) in
             let launchActionString = SalesforceSDKManager.launchActionsStringRepresentation(launchActionList)

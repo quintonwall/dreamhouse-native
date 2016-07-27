@@ -14,6 +14,9 @@
 		5AB7E28E1D47D6BC00ACBA5E /* WelcomeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E28C1D47D6BC00ACBA5E /* WelcomeContentViewController.swift */; };
 		5AB7E2921D4812FB00ACBA5E /* LeftMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2911D4812FB00ACBA5E /* LeftMenuController.swift */; };
 		5AB7E2941D48233700ACBA5E /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2931D48233700ACBA5E /* UIImageView.swift */; };
+		5AB7E2961D48294700ACBA5E /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2951D48294700ACBA5E /* PropertiesViewController.swift */; };
+		5AB7E2981D48371C00ACBA5E /* PropertiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2971D48371C00ACBA5E /* PropertiesTableViewCell.swift */; };
+		5AB7E29A1D483D7400ACBA5E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2991D483D7400ACBA5E /* JSON.swift */; };
 		C4094C593EF70EC62B33FFDD /* Pods_dreamhousenative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2156374A2CB1C0E3E68EAF31 /* Pods_dreamhousenative.framework */; };
 		E7362F1F1D405D41006E661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F1E1D405D41006E661F /* AppDelegate.swift */; };
 		E7362F211D405D41006E661F /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F201D405D41006E661F /* SideViewController.swift */; };
@@ -33,6 +36,9 @@
 		5AB7E28C1D47D6BC00ACBA5E /* WelcomeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeContentViewController.swift; sourceTree = "<group>"; };
 		5AB7E2911D4812FB00ACBA5E /* LeftMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuController.swift; sourceTree = "<group>"; };
 		5AB7E2931D48233700ACBA5E /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		5AB7E2951D48294700ACBA5E /* PropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesViewController.swift; sourceTree = "<group>"; };
+		5AB7E2971D48371C00ACBA5E /* PropertiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesTableViewCell.swift; sourceTree = "<group>"; };
+		5AB7E2991D483D7400ACBA5E /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A14A3CCDF77D46BEC105A40C /* Pods-dreamhousenative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamhousenative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dreamhousenative/Pods-dreamhousenative.debug.xcconfig"; sourceTree = "<group>"; };
 		A565D14EC170378E2A43F2BD /* Pods-dreamhousenative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamhousenative.release.xcconfig"; path = "Pods/Target Support Files/Pods-dreamhousenative/Pods-dreamhousenative.release.xcconfig"; sourceTree = "<group>"; };
 		E7362F1B1D405D41006E661F /* dreamhousenative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreamhousenative.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +75,8 @@
 		5AB7E28F1D47D88A00ACBA5E /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				5AB7E2951D48294700ACBA5E /* PropertiesViewController.swift */,
+				5AB7E2971D48371C00ACBA5E /* PropertiesTableViewCell.swift */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 			children = (
 				E7362F3E1D413729006E661F /* UIColor.swift */,
 				5AB7E2931D48233700ACBA5E /* UIImageView.swift */,
+				5AB7E2991D483D7400ACBA5E /* JSON.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -270,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB7E2961D48294700ACBA5E /* PropertiesViewController.swift in Sources */,
+				5AB7E29A1D483D7400ACBA5E /* JSON.swift in Sources */,
 				5AB7E2881D47CA2F00ACBA5E /* MainNavigationController.swift in Sources */,
 				5AB7E2861D47C9A100ACBA5E /* SideMenuViewController.swift in Sources */,
 				E7362F211D405D41006E661F /* SideViewController.swift in Sources */,
@@ -277,6 +288,7 @@
 				E7362F1F1D405D41006E661F /* AppDelegate.swift in Sources */,
 				5AB7E28E1D47D6BC00ACBA5E /* WelcomeContentViewController.swift in Sources */,
 				5AB7E2941D48233700ACBA5E /* UIImageView.swift in Sources */,
+				5AB7E2981D48371C00ACBA5E /* PropertiesTableViewCell.swift in Sources */,
 				E7362F3C1D4136F4006E661F /* AppDefaults.swift in Sources */,
 				5AB7E28D1D47D6BC00ACBA5E /* WelcomeTourPageViewController.swift in Sources */,
 				5AB7E2921D4812FB00ACBA5E /* LeftMenuController.swift in Sources */,

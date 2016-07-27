@@ -47,3 +47,7 @@ b. set its  value to the url of your community (without the https://). eg: dream
 c. save
 d. delete any existing app you have deployed on the simulator to remove keys stored by the mobile SDK.
 e. Click run and you should now be able to use social sign-in to auto create a community user right from a native app.
+
+
+POST-SETUP
+Remember that any object you access through your mobile app, needs to be included in the community user profile to access it via the REST APIs

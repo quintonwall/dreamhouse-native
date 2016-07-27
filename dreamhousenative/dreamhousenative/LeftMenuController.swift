@@ -28,5 +28,36 @@ class LeftMenuController: UITableViewController {
         //tableView.selectRowAtIndexPath(NSIndexPath(forRow: selectedMenuItem, inSection: 0), animated: false, scrollPosition: .Middle)
         
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        print("did select row: \(indexPath.row)")
+        
+        if (indexPath.row == selectedMenuItem) {
+            return
+        }
+        
+        selectedMenuItem = indexPath.row
+        
+        //Present new view controller
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        switch (indexPath.row) {
+        case 0:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+            break
+        case 1:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PropertiesListView")
+            break
+        case 2:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController3")
+            break
+        default:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController4")
+            break
+        }
+        sideMenuController()?.setContentViewController(destViewController)
+    }
+
 
 }
