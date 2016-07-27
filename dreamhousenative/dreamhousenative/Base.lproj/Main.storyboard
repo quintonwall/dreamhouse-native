@@ -164,7 +164,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-oJ-vgB" userLabel="titleView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g7S-3r-gZW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-oJ-vgB" userLabel="titleView">
                                 <rect key="frame" x="0.0" y="314" width="600" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Living" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53J-HD-ICC">
@@ -192,6 +195,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="53J-HD-ICC" firstAttribute="leading" secondItem="j6D-oJ-vgB" secondAttribute="leading" constant="10" id="1NU-RD-SO7"/>
                                     <constraint firstItem="CRN-XU-IYl" firstAttribute="leading" secondItem="j6D-oJ-vgB" secondAttribute="leading" constant="10" id="Dyu-K9-3oc"/>
@@ -349,13 +353,17 @@
                             <constraint firstItem="CSl-9g-tx5" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="0f5-Ah-3kq"/>
                             <constraint firstItem="j6D-oJ-vgB" firstAttribute="width" secondItem="HlP-sO-UdO" secondAttribute="width" id="3Ox-l0-5d4"/>
                             <constraint firstItem="j6D-oJ-vgB" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="3dm-6P-YA4"/>
+                            <constraint firstItem="g7S-3r-gZW" firstAttribute="width" secondItem="HlP-sO-UdO" secondAttribute="width" id="596-xR-d0D"/>
                             <constraint firstItem="Het-pH-9DO" firstAttribute="width" secondItem="HlP-sO-UdO" secondAttribute="width" id="95V-jS-bKs"/>
                             <constraint firstItem="DcE-su-VCy" firstAttribute="width" secondItem="HlP-sO-UdO" secondAttribute="width" id="FjN-hW-VhW"/>
                             <constraint firstItem="DcE-su-VCy" firstAttribute="top" secondItem="j6D-oJ-vgB" secondAttribute="bottom" id="FvL-bH-d3L"/>
                             <constraint firstItem="Het-pH-9DO" firstAttribute="top" secondItem="cmj-gg-6EC" secondAttribute="bottom" id="M5t-EF-75l"/>
                             <constraint firstItem="6KZ-43-GWG" firstAttribute="top" secondItem="DcE-su-VCy" secondAttribute="bottom" id="Qka-HO-FgW"/>
+                            <constraint firstItem="g7S-3r-gZW" firstAttribute="centerY" secondItem="HlP-sO-UdO" secondAttribute="centerY" id="b8s-jJ-Eee"/>
                             <constraint firstItem="j6D-oJ-vgB" firstAttribute="top" secondItem="Het-pH-9DO" secondAttribute="bottom" id="dof-Da-Lz9"/>
+                            <constraint firstItem="g7S-3r-gZW" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="iF8-SY-d4w"/>
                             <constraint firstItem="CSl-9g-tx5" firstAttribute="width" secondItem="HlP-sO-UdO" secondAttribute="width" id="kBn-x9-pPR"/>
+                            <constraint firstItem="g7S-3r-gZW" firstAttribute="height" secondItem="HlP-sO-UdO" secondAttribute="height" id="n9b-nY-SHN"/>
                             <constraint firstItem="DcE-su-VCy" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="qrg-84-crR"/>
                             <constraint firstItem="CSl-9g-tx5" firstAttribute="top" secondItem="6KZ-43-GWG" secondAttribute="bottom" id="rYf-Z9-uSt"/>
                             <constraint firstItem="Het-pH-9DO" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="vFK-nJ-b9S"/>
@@ -366,6 +374,7 @@
                     <connections>
                         <outlet property="askingPriceLabel" destination="lzZ-fJ-UYr" id="2F6-jH-Jq3"/>
                         <outlet property="askingpriceView" destination="CSl-9g-tx5" id="Dsv-zI-ktt"/>
+                        <outlet property="backgroundImage" destination="g7S-3r-gZW" id="NWW-lI-sAA"/>
                         <outlet property="bathroomView" destination="DcE-su-VCy" id="FPT-Tb-DzL"/>
                         <outlet property="bedroomsView" destination="6KZ-43-GWG" id="L5t-Rl-23J"/>
                         <outlet property="descriptionLabel" destination="CRN-XU-IYl" id="blS-qG-5AR"/>

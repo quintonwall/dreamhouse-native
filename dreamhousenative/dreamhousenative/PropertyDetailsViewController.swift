@@ -19,6 +19,7 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     @IBOutlet weak var bedroomsView: UIView!
     @IBOutlet weak var askingpriceView: UIView!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -30,7 +31,7 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //self.propertyImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!) )
+        //
         self.propertyImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!), placeholderImage: UIImage(named: "full-size-icon"))
         
        // titleView.layer.borderWidth = 1
@@ -49,6 +50,9 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         //askingpriceView.layer.borderWidth = 1
         //askingpriceView.layer.borderColor = AppDefaults.dreamhouseBlreen.CGColor
         askingPriceLabel.text = property?.price
+        
+       self.backgroundImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!) )
+        backgroundImage.blurImageLightly()
         
     }
     
