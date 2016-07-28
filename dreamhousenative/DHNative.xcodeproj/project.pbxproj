@@ -21,7 +21,6 @@
 		5AB7E29A1D483D7400ACBA5E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2991D483D7400ACBA5E /* JSON.swift */; };
 		5AD34F221D49376700FA40C0 /* PropertyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD34F211D49376700FA40C0 /* PropertyDetailsViewController.swift */; };
 		C1F9A14D3C175BFCF7501755 /* Pods_DHNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44040E52B74B730AB9FDDED1 /* Pods_DHNative.framework */; };
-		C4094C593EF70EC62B33FFDD /* Pods_dreamhousenative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2156374A2CB1C0E3E68EAF31 /* Pods_dreamhousenative.framework */; };
 		E7362F1F1D405D41006E661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F1E1D405D41006E661F /* AppDelegate.swift */; };
 		E7362F211D405D41006E661F /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F201D405D41006E661F /* SideViewController.swift */; };
 		E7362F241D405D41006E661F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7362F221D405D41006E661F /* Main.storyboard */; };
@@ -67,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4094C593EF70EC62B33FFDD /* Pods_dreamhousenative.framework in Frameworks */,
 				C1F9A14D3C175BFCF7501755 /* Pods_DHNative.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
