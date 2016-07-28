@@ -30,6 +30,7 @@ class Property {
     //broker info
     var brokerId: String?
     var brokerName: String?
+    var brokerTitle: String?
     var brokerImageURL: String?
     
     

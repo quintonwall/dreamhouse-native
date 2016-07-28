@@ -76,7 +76,7 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         
         //NOTE: Since we are using community users, make sure the profile in the org has Property__c included!
         //fetch everything we need here for the details view as well. This way we avoid a second round trip to the server.
-        let query = String("select Address__c, Baths__c, Beds__c, Broker__c, Broker__r.Name, Broker__r.Picture__c, City__c, Description__c, Id, Location__c, Name, OwnerId, Picture__c, Price__c, State__c, Thumbnail__c, Title__c, Zip__c from Property__c")
+        let query = String("select Address__c, Baths__c, Beds__c, Broker__c, Broker__r.Title__c, Broker__r.Name, Broker__r.Picture__c, City__c, Description__c, Id, Location__c, Name, OwnerId, Picture__c, Price__c, State__c, Thumbnail__c, Title__c, Zip__c from Property__c")
         
         
         sharedInstance.performSOQLQuery(query, failBlock: { error in
@@ -144,6 +144,7 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         //broker info
         p.brokerId = jsonRecord["Broker__c"].string
         p.brokerName = jsonRecord["Broker__r"]["Name"].string
+        p.brokerTitle = jsonRecord["Broker__r"]["Title__c"].string
         p.brokerImageURL  = jsonRecord["Broker__r"]["Picture__c"].string
         
         return p

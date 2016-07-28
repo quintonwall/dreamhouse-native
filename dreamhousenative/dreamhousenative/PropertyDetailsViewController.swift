@@ -9,15 +9,21 @@
 import UIKit
 import ENSwiftSideMenu
 import SDWebImage
+import MapKit
+import Spring
 
 class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     
     var property: Property?
+    let regionRadius: CLLocationDistance = 150
+    var propertyLocation : CLLocation?
     
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var bathroomView: UIView!
     @IBOutlet weak var bedroomsView: UIView!
     @IBOutlet weak var askingpriceView: UIView!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var buttonBarView: UIView!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -28,28 +34,45 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     @IBOutlet weak var numBedroomsLabel: UILabel!
     @IBOutlet weak var numBathsLabel: UILabel!
     @IBOutlet weak var askingPriceLabel: UILabel!
+    @IBOutlet weak var brokerNameLabel: UILabel!
+    @IBOutlet weak var brokerTitleLabel: UILabel!
+    @IBOutlet weak var brokerProfileImage: UIImageView!
+    
+    //button bar
+    @IBOutlet weak var liveAgentButton: SpringButton!
+    @IBOutlet weak var shareButton: SpringButton!
+    @IBOutlet weak var favoriteButton: SpringButton!
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //
+        //fetch the image first to kick of the fetch thread
         self.propertyImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!), placeholderImage: UIImage(named: "full-size-icon"))
         
-       // titleView.layer.borderWidth = 1
-        //titleView.layer.borderColor = AppDefaults.dreamhouseBlreen.CGColor
+        
+        mapView.layer.cornerRadius = mapView.frame.size.height / 2
+        mapView.layer.masksToBounds = true
+        mapView.layer.borderColor = AppDefaults.dreamhouseGreen.CGColor
+        mapView.layer.borderWidth = 2.0
+        
+        
         titleLabel.text = property?.title
         descriptionLabel.text = property?.description
         
-        //bathroomView.layer.borderWidth = 1
-       // bathroomView.layer.borderColor = AppDefaults.dreamhouseBlreen.CGColor
         numBathsLabel.text = property?.numberOfBaths?.stringValue
         
-       // bedroomsView.layer.borderWidth = 1
-        //bedroomsView.layer.borderColor = AppDefaults.dreamhouseBlreen.CGColor
-        numBedroomsLabel.text = property?.numberOfBeds?.stringValue
+         numBedroomsLabel.text = property?.numberOfBeds?.stringValue
         
-        //askingpriceView.layer.borderWidth = 1
-        //askingpriceView.layer.borderColor = AppDefaults.dreamhouseBlreen.CGColor
         askingPriceLabel.text = property?.price
+        
+        brokerNameLabel.text = property?.brokerName
+        brokerTitleLabel.text = property?.brokerTitle
+        brokerProfileImage.sd_setImageWithURL(NSURL(string: property!.brokerImageURL!))
+        brokerProfileImage.layer.cornerRadius = brokerProfileImage.frame.size.height / 2
+        brokerProfileImage.layer.masksToBounds = true
+        brokerProfileImage.layer.borderColor = AppDefaults.dreamhouseBlreen.CGColor
+        brokerProfileImage.layer.borderWidth = 1.0
+        
         
        self.backgroundImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!) )
         backgroundImage.blurImageLightly()
@@ -59,7 +82,50 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sideMenuController()?.sideMenu?.delegate = self
+        
+        //set the map after load for nice zoom effect.
+        propertyLocation = CLLocation(latitude: self.property!.latitude!, longitude: self.property!.longitude!)
+        centerMapOnLocation(propertyLocation!)
+        
     }
+    
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
+         let objectAnnotation = MKPointAnnotation()
+        objectAnnotation.coordinate = location.coordinate
+        objectAnnotation.title = property?.title
+        self.mapView.addAnnotation(objectAnnotation)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    //MARK: - 
+    //MARK: Button Actions
+    @IBAction func liveAgentTapped(sender: AnyObject) {
+        let btn: SpringButton = sender as! SpringButton
+        btn.animation = "zoomOut"
+        btn.animate()
+        btn.animation = "zoomIn"
+        btn.animate()
+    }
+    
+    @IBAction func shareButtonTapped(sender: AnyObject) {
+        let btn: SpringButton = sender as! SpringButton
+        btn.animation = "zoomOut"
+        btn.animate()
+        btn.animation = "zoomIn"
+        btn.animate()
+    }
+    
+    @IBAction func favoriteButtonTapped(sender: AnyObject) {
+        let btn: SpringButton = sender as! SpringButton
+        btn.animation = "zoomOut"
+        btn.animate()
+        btn.animation = "zoomIn"
+        btn.animate()
+    }
+    
     
     
 }
