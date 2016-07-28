@@ -161,11 +161,11 @@
                         <viewControllerLayoutGuide type="bottom" id="3pc-dZ-WDJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HlP-sO-UdO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g7S-3r-gZW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Het-pH-9DO">
                                 <rect key="frame" x="0.0" y="64" width="600" height="250"/>
@@ -522,8 +522,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="askingPriceLabel" destination="lzZ-fJ-UYr" id="2F6-jH-Jq3"/>
                         <outlet property="askingpriceView" destination="CSl-9g-tx5" id="Dsv-zI-ktt"/>
