@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SalesforceSDKCore
 
 class LeftMenuController: UITableViewController {
 
@@ -31,31 +32,85 @@ class LeftMenuController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if (indexPath.row == selectedMenuItem) {
+        print("SELECTED INDEX: \(indexPath.row)")
+       
+        /*if (indexPath.row == selectedMenuItem) {
             return
-        }
+        }*/
         
-        selectedMenuItem = indexPath.row
-        
-        //Present new view controller
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
-        switch (indexPath.row) {
-        case 0:
+        
+        switch (indexPath.section) {
+        case 0: // properties section
+            switch (indexPath.row) {
+            case 0:
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            case 1:
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PropertiesListView")
+                break
+            case 2:
+                //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("BrokersListView")
+                print("NOT IMPLEMENTED YET. Setting to Welcome View")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            case 3:
+               // destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FavoritesListView")
+                 print("NOT IMPLEMENTED YET. Setting to Welcome View")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            default:
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            }
+        case 1: //mortgage section
+            switch (indexPath.row) {
+            case 0:
+                //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PreApprovalView")
+                 print("NOT IMPLEMENTED YET. Setting to Welcome View")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            case 1:
+                //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("RatesView")
+                 print("NOT IMPLEMENTED YET. Setting to Welcome View")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            default:
+                //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PreApprovalView")
+                 print("NOT IMPLEMENTED YET. Setting to Welcome View")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            }
+        case 2: //account section
+            switch (indexPath.row) {
+            case 0:
+                //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ProfileView")
+                 print("NOT IMPLEMENTED YET. Setting to Welcome View")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            case 1:
+                //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SettingsView")
+                 print("NOT IMPLEMENTED YET. Setting to Welcome View")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            case 2:
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                SFAuthenticationManager.sharedManager().logout()
+                break
+            default:
+               // destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ProfileView")
+                 print("NOT IMPLEMENTED YET. Setting to Welcome View")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                break
+            }
+        default: //you're screwed section
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
             break
-        case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PropertiesListView")
-            break
-        case 2:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController3")
-            break
-        default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController4")
-            break
         }
-        sideMenuController()?.setContentViewController(destViewController)
-    }
+         sideMenuController()?.setContentViewController(destViewController)
+        
+          }
 
 
 }
