@@ -59,6 +59,7 @@
 		E7362F391D41307C006E661F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		E7362F3B1D4136F4006E661F /* AppDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		E7362F3E1D413729006E661F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E7A833F51D4A770E00378C80 /* DHNative-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHNative-bridge.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +148,7 @@
 				E7362F391D41307C006E661F /* Media.xcassets */,
 				E7362F3B1D4136F4006E661F /* AppDefaults.swift */,
 				5A1500F71D415F2200C0AF61 /* auth-setup.txt */,
+				E7A833F51D4A770E00378C80 /* DHNative-bridge.h */,
 			);
 			path = dreamhousenative;
 			sourceTree = "<group>";
@@ -206,6 +208,7 @@
 				TargetAttributes = {
 					E7362F1A1D405D40006E661F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4X564CR95Y;
 					};
 				};
 			};
@@ -376,6 +379,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "dreamhousenative/DHNative-bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -414,6 +418,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "dreamhousenative/DHNative-bridge.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -423,6 +428,7 @@
 			baseConfigurationReference = 5D7EFEC69DB6449BC013DC74 /* Pods-DHNative.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = dreamhousenative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -436,6 +442,7 @@
 			baseConfigurationReference = 7BF0F450990713DEDED3B13D /* Pods-DHNative.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = dreamhousenative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

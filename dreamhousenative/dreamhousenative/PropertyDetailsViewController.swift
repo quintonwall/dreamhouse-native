@@ -12,6 +12,8 @@ import SDWebImage
 import MapKit
 import Spring
 
+
+
 class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     
     var property: Property?
@@ -108,6 +110,13 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         btn.animate()
         btn.animation = "zoomIn"
         btn.animate()
+        
+       // https://salesforcesos.com/ios/service-sdk/1.0.0/service_sdk_ios/ios_sos_quick_start.htm
+        //https://help.salesforce.com/apex/HTViewHelpDoc?id=service_presence_add_presence_widget_to_console.htm&language=th
+        
+
+        SOSSessionManager.sharedInstance().startSessionWithOptions(AppDefaults.getSOSOptions())
+        //SCSServiceCloud.sharedInstance().sos.startSessionWithOptions(options)
     }
     
     @IBAction func shareButtonTapped(sender: AnyObject) {

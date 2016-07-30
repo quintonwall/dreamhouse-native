@@ -53,3 +53,28 @@ Custom Object Permissions
 1. Update custom object permissions (setup -> Profiles --> the custom profile you created in step 1 above) to any objects you want to access from your mobile app
 2. Update field level security on those objects (setup --> security controls -> Field Accessibilty --> View by Profiles.)
 
+
+
+SOS set up:
+
+1. install SOS quickstart package into your org: https://salesforcesos.com
+
+First you need to setup Service Cloud using Setting up SOS in Service Cloud
+
+This should provide you with:
+OrganizationID: 0000000xxxx
+DeployementID :000000xxxx
+SOS Access URL: https://x.xx.com/sosagentxxx/
+
+
+
+Once that is setup you can follow the instructions for setup of iOS or Android
+
+Use Cocoapods, for downloading and managing Repo.
+Pod Instructions:
+
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/goinstant/pods-specs-public'
+pod 'SOS'
+
+
