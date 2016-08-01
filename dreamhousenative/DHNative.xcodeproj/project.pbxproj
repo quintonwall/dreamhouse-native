@@ -10,6 +10,27 @@
 		5A1500F81D415F2200C0AF61 /* auth-setup.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A1500F71D415F2200C0AF61 /* auth-setup.txt */; };
 		5A20F59D1D49425900E69D66 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20F59C1D49425900E69D66 /* Property.swift */; };
 		5A20F59F1D49552900E69D66 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20F59E1D49552900E69D66 /* Int.swift */; };
+		5A5380671D4E6B9F004A418F /* BrokerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380661D4E6B9F004A418F /* BrokerSelectionViewController.swift */; };
+		5A53808D1D4E6CA8004A418F /* AccessoryIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380831D4E6CA8004A418F /* AccessoryIndicator.swift */; };
+		5A53808E1D4E6CA8004A418F /* DialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380841D4E6CA8004A418F /* DialView.swift */; };
+		5A53808F1D4E6CA8004A418F /* JFCardSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380851D4E6CA8004A418F /* JFCardSelectionCell.swift */; };
+		5A5380901D4E6CA8004A418F /* JFCardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380861D4E6CA8004A418F /* JFCardSelectionViewController.swift */; };
+		5A5380911D4E6CA8004A418F /* JFCardSelectionViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380871D4E6CA8004A418F /* JFCardSelectionViewController+CollectionView.swift */; };
+		5A5380921D4E6CA8004A418F /* JFCardSelectionViewController+JFFocusedCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380881D4E6CA8004A418F /* JFCardSelectionViewController+JFFocusedCardViewDelegate.swift */; };
+		5A5380931D4E6CA8004A418F /* JFCardSelectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380891D4E6CA8004A418F /* JFCardSelectionViewFlowLayout.swift */; };
+		5A5380941D4E6CA8004A418F /* JFFocusedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53808A1D4E6CA8004A418F /* JFFocusedCardView.swift */; };
+		5A5380951D4E6CA8004A418F /* PointerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53808B1D4E6CA8004A418F /* PointerLayer.swift */; };
+		5A5380961D4E6CA8004A418F /* ShadowAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53808C1D4E6CA8004A418F /* ShadowAttributes.swift */; };
+		5A5380981D4E6DA8004A418F /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380971D4E6DA8004A418F /* NSDate.swift */; };
+		5A53809A1D4E6DEA004A418F /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380991D4E6DEA004A418F /* NSURL.swift */; };
+		5A53809C1D4E6E0D004A418F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53809B1D4E6E0D004A418F /* String.swift */; };
+		5A53809E1D4E6E52004A418F /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53809D1D4E6E52004A418F /* UIDevice.swift */; };
+		5A5380A01D4E6E7D004A418F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53809F1D4E6E7D004A418F /* UIImage.swift */; };
+		5A5380A21D4E6ECA004A418F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380A11D4E6ECA004A418F /* UIView.swift */; };
+		5A5380A41D4E6F89004A418F /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380A31D4E6F89004A418F /* Broker.swift */; };
+		5A5380A71D4E7C92004A418F /* JFCardSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5380A51D4E7C92004A418F /* JFCardSelectionCell.xib */; };
+		5A5380A81D4E7C92004A418F /* JFFocusedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5380A61D4E7C92004A418F /* JFFocusedCardView.xib */; };
+		5A5380AB1D4EA3DC004A418F /* NotImplementedYetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380AA1D4EA3DC004A418F /* NotImplementedYetController.swift */; };
 		5AB7E2861D47C9A100ACBA5E /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2851D47C9A100ACBA5E /* SideMenuViewController.swift */; };
 		5AB7E2881D47CA2F00ACBA5E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2871D47CA2F00ACBA5E /* MainNavigationController.swift */; };
 		5AB7E28D1D47D6BC00ACBA5E /* WelcomeTourPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E28B1D47D6BC00ACBA5E /* WelcomeTourPageViewController.swift */; };
@@ -36,6 +57,27 @@
 		5A1500F71D415F2200C0AF61 /* auth-setup.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "auth-setup.txt"; sourceTree = "<group>"; };
 		5A20F59C1D49425900E69D66 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		5A20F59E1D49552900E69D66 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		5A5380661D4E6B9F004A418F /* BrokerSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrokerSelectionViewController.swift; sourceTree = "<group>"; };
+		5A5380831D4E6CA8004A418F /* AccessoryIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryIndicator.swift; sourceTree = "<group>"; };
+		5A5380841D4E6CA8004A418F /* DialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialView.swift; sourceTree = "<group>"; };
+		5A5380851D4E6CA8004A418F /* JFCardSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCardSelectionCell.swift; sourceTree = "<group>"; };
+		5A5380861D4E6CA8004A418F /* JFCardSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCardSelectionViewController.swift; sourceTree = "<group>"; };
+		5A5380871D4E6CA8004A418F /* JFCardSelectionViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JFCardSelectionViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		5A5380881D4E6CA8004A418F /* JFCardSelectionViewController+JFFocusedCardViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JFCardSelectionViewController+JFFocusedCardViewDelegate.swift"; sourceTree = "<group>"; };
+		5A5380891D4E6CA8004A418F /* JFCardSelectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCardSelectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		5A53808A1D4E6CA8004A418F /* JFFocusedCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFFocusedCardView.swift; sourceTree = "<group>"; };
+		5A53808B1D4E6CA8004A418F /* PointerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerLayer.swift; sourceTree = "<group>"; };
+		5A53808C1D4E6CA8004A418F /* ShadowAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowAttributes.swift; sourceTree = "<group>"; };
+		5A5380971D4E6DA8004A418F /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		5A5380991D4E6DEA004A418F /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
+		5A53809B1D4E6E0D004A418F /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5A53809D1D4E6E52004A418F /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		5A53809F1D4E6E7D004A418F /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		5A5380A11D4E6ECA004A418F /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5A5380A31D4E6F89004A418F /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
+		5A5380A51D4E7C92004A418F /* JFCardSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFCardSelectionCell.xib; sourceTree = "<group>"; };
+		5A5380A61D4E7C92004A418F /* JFFocusedCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFFocusedCardView.xib; sourceTree = "<group>"; };
+		5A5380AA1D4EA3DC004A418F /* NotImplementedYetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotImplementedYetController.swift; sourceTree = "<group>"; };
 		5AB7E2851D47C9A100ACBA5E /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		5AB7E2871D47CA2F00ACBA5E /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		5AB7E28B1D47D6BC00ACBA5E /* WelcomeTourPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTourPageViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +125,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5AB7E28F1D47D88A00ACBA5E /* Tabs */ = {
+		5A5380611D4E699F004A418F /* properties */ = {
 			isa = PBXGroup;
 			children = (
 				5AB7E2951D48294700ACBA5E /* PropertiesViewController.swift */,
@@ -91,16 +133,62 @@
 				5AD34F211D49376700FA40C0 /* PropertyDetailsViewController.swift */,
 				5A20F59C1D49425900E69D66 /* Property.swift */,
 			);
+			name = properties;
+			sourceTree = "<group>";
+		};
+		5A5380621D4E69B2004A418F /* brokers */ = {
+			isa = PBXGroup;
+			children = (
+				5A5380661D4E6B9F004A418F /* BrokerSelectionViewController.swift */,
+				5A5380A31D4E6F89004A418F /* Broker.swift */,
+			);
+			name = brokers;
+			sourceTree = "<group>";
+		};
+		5A5380631D4E6B1A004A418F /* thirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				5A5380681D4E6BF6004A418F /* JFCard */,
+			);
+			name = thirdParty;
+			sourceTree = "<group>";
+		};
+		5A5380681D4E6BF6004A418F /* JFCard */ = {
+			isa = PBXGroup;
+			children = (
+				5A5380A51D4E7C92004A418F /* JFCardSelectionCell.xib */,
+				5A5380A61D4E7C92004A418F /* JFFocusedCardView.xib */,
+				5A5380831D4E6CA8004A418F /* AccessoryIndicator.swift */,
+				5A5380841D4E6CA8004A418F /* DialView.swift */,
+				5A5380851D4E6CA8004A418F /* JFCardSelectionCell.swift */,
+				5A5380861D4E6CA8004A418F /* JFCardSelectionViewController.swift */,
+				5A5380871D4E6CA8004A418F /* JFCardSelectionViewController+CollectionView.swift */,
+				5A5380881D4E6CA8004A418F /* JFCardSelectionViewController+JFFocusedCardViewDelegate.swift */,
+				5A5380891D4E6CA8004A418F /* JFCardSelectionViewFlowLayout.swift */,
+				5A53808A1D4E6CA8004A418F /* JFFocusedCardView.swift */,
+				5A53808B1D4E6CA8004A418F /* PointerLayer.swift */,
+				5A53808C1D4E6CA8004A418F /* ShadowAttributes.swift */,
+			);
+			name = JFCard;
+			sourceTree = "<group>";
+		};
+		5AB7E28F1D47D88A00ACBA5E /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				5A5380621D4E69B2004A418F /* brokers */,
+				5A5380611D4E699F004A418F /* properties */,
+				5A5380AA1D4EA3DC004A418F /* NotImplementedYetController.swift */,
+			);
 			name = Tabs;
 			sourceTree = "<group>";
 		};
 		5AB7E2901D47D89F00ACBA5E /* SideNav */ = {
 			isa = PBXGroup;
 			children = (
+				5AB7E2911D4812FB00ACBA5E /* LeftMenuController.swift */,
+				E7362F201D405D41006E661F /* SideViewController.swift */,
 				5AB7E2851D47C9A100ACBA5E /* SideMenuViewController.swift */,
 				5AB7E2871D47CA2F00ACBA5E /* MainNavigationController.swift */,
-				E7362F201D405D41006E661F /* SideViewController.swift */,
-				5AB7E2911D4812FB00ACBA5E /* LeftMenuController.swift */,
 			);
 			name = SideNav;
 			sourceTree = "<group>";
@@ -137,6 +225,7 @@
 		E7362F1D1D405D41006E661F /* dreamhousenative */ = {
 			isa = PBXGroup;
 			children = (
+				5A5380631D4E6B1A004A418F /* thirdParty */,
 				5AB7E2901D47D89F00ACBA5E /* SideNav */,
 				5AB7E28F1D47D88A00ACBA5E /* Tabs */,
 				E7362F3D1D41370E006E661F /* extensions */,
@@ -169,6 +258,12 @@
 				5AB7E2931D48233700ACBA5E /* UIImageView.swift */,
 				5AB7E2991D483D7400ACBA5E /* JSON.swift */,
 				5A20F59E1D49552900E69D66 /* Int.swift */,
+				5A5380971D4E6DA8004A418F /* NSDate.swift */,
+				5A5380991D4E6DEA004A418F /* NSURL.swift */,
+				5A53809B1D4E6E0D004A418F /* String.swift */,
+				5A53809D1D4E6E52004A418F /* UIDevice.swift */,
+				5A53809F1D4E6E7D004A418F /* UIImage.swift */,
+				5A5380A11D4E6ECA004A418F /* UIView.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -235,9 +330,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5380A81D4E7C92004A418F /* JFFocusedCardView.xib in Resources */,
 				5A1500F81D415F2200C0AF61 /* auth-setup.txt in Resources */,
 				E7362F291D405D41006E661F /* LaunchScreen.storyboard in Resources */,
 				E7362F3A1D41307C006E661F /* Media.xcassets in Resources */,
+				5A5380A71D4E7C92004A418F /* JFCardSelectionCell.xib in Resources */,
 				E7362F241D405D41006E661F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,21 +395,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A20F59D1D49425900E69D66 /* Property.swift in Sources */,
+				5A53809A1D4E6DEA004A418F /* NSURL.swift in Sources */,
 				5AB7E2961D48294700ACBA5E /* PropertiesViewController.swift in Sources */,
 				5AB7E29A1D483D7400ACBA5E /* JSON.swift in Sources */,
+				5A5380951D4E6CA8004A418F /* PointerLayer.swift in Sources */,
 				5AB7E2881D47CA2F00ACBA5E /* MainNavigationController.swift in Sources */,
+				5A5380AB1D4EA3DC004A418F /* NotImplementedYetController.swift in Sources */,
+				5A53808F1D4E6CA8004A418F /* JFCardSelectionCell.swift in Sources */,
 				5AB7E2861D47C9A100ACBA5E /* SideMenuViewController.swift in Sources */,
+				5A5380961D4E6CA8004A418F /* ShadowAttributes.swift in Sources */,
+				5A5380A01D4E6E7D004A418F /* UIImage.swift in Sources */,
 				E7362F211D405D41006E661F /* SideViewController.swift in Sources */,
 				E7362F3F1D413729006E661F /* UIColor.swift in Sources */,
+				5A5380671D4E6B9F004A418F /* BrokerSelectionViewController.swift in Sources */,
+				5A5380A21D4E6ECA004A418F /* UIView.swift in Sources */,
+				5A53809C1D4E6E0D004A418F /* String.swift in Sources */,
 				E7362F1F1D405D41006E661F /* AppDelegate.swift in Sources */,
 				5AB7E28E1D47D6BC00ACBA5E /* WelcomeContentViewController.swift in Sources */,
+				5A5380901D4E6CA8004A418F /* JFCardSelectionViewController.swift in Sources */,
+				5A5380A41D4E6F89004A418F /* Broker.swift in Sources */,
 				5AB7E2941D48233700ACBA5E /* UIImageView.swift in Sources */,
 				5AB7E2981D48371C00ACBA5E /* PropertiesTableViewCell.swift in Sources */,
+				5A5380921D4E6CA8004A418F /* JFCardSelectionViewController+JFFocusedCardViewDelegate.swift in Sources */,
+				5A53808D1D4E6CA8004A418F /* AccessoryIndicator.swift in Sources */,
+				5A5380981D4E6DA8004A418F /* NSDate.swift in Sources */,
 				5AD34F221D49376700FA40C0 /* PropertyDetailsViewController.swift in Sources */,
+				5A53809E1D4E6E52004A418F /* UIDevice.swift in Sources */,
 				E7362F3C1D4136F4006E661F /* AppDefaults.swift in Sources */,
+				5A53808E1D4E6CA8004A418F /* DialView.swift in Sources */,
 				5AB7E28D1D47D6BC00ACBA5E /* WelcomeTourPageViewController.swift in Sources */,
+				5A5380941D4E6CA8004A418F /* JFFocusedCardView.swift in Sources */,
 				5AB7E2921D4812FB00ACBA5E /* LeftMenuController.swift in Sources */,
+				5A5380911D4E6CA8004A418F /* JFCardSelectionViewController+CollectionView.swift in Sources */,
 				5A20F59F1D49552900E69D66 /* Int.swift in Sources */,
+				5A5380931D4E6CA8004A418F /* JFCardSelectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

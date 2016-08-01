@@ -51,17 +51,15 @@ class LeftMenuController: UITableViewController {
                 destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PropertiesListView")
                 break
             case 2:
-                //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("BrokersListView")
-                print("NOT IMPLEMENTED YET. Setting to Welcome View")
-                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("BrokersListView")
                 break
             case 3:
                // destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FavoritesListView")
                  print("NOT IMPLEMENTED YET. Setting to Welcome View")
-                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("NotImplementedView")
                 break
             default:
-                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("NotImplementedView")
                 break
             }
         case 1: //mortgage section
@@ -69,12 +67,12 @@ class LeftMenuController: UITableViewController {
             case 0:
                 //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PreApprovalView")
                  print("NOT IMPLEMENTED YET. Setting to Welcome View")
-                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("NotImplementedView")
                 break
             case 1:
                 //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("RatesView")
                  print("NOT IMPLEMENTED YET. Setting to Welcome View")
-                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("NotImplementedView")
                 break
             default:
                 //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PreApprovalView")
@@ -87,15 +85,15 @@ class LeftMenuController: UITableViewController {
             case 0:
                 //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ProfileView")
                  print("NOT IMPLEMENTED YET. Setting to Welcome View")
-                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("NotImplementedView")
                 break
             case 1:
                 //destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SettingsView")
                  print("NOT IMPLEMENTED YET. Setting to Welcome View")
-                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("NotImplementedView")
                 break
             case 2:
-                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("WelcomeView")
+                destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("NotImplementedView")
                 SFAuthenticationManager.sharedManager().logout()
                 break
             default:

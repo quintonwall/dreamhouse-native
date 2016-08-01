@@ -44,6 +44,7 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     @IBOutlet weak var liveAgentButton: SpringButton!
     @IBOutlet weak var shareButton: SpringButton!
     @IBOutlet weak var favoriteButton: SpringButton!
+    @IBOutlet weak var brokerDetailsButton: UIButton!
     
     
     override func viewWillAppear(animated: Bool) {
@@ -102,6 +103,14 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "BrokerDetails" {
+            let brokersViewController = segue.destinationViewController as! BrokerSelectionViewController
+            brokersViewController.brokerId = self.property?.brokerId
+        }
+    }
+    
+    
     //MARK: - 
     //MARK: Button Actions
     @IBAction func liveAgentTapped(sender: AnyObject) {
@@ -135,6 +144,10 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         btn.animate()
     }
     
+    @IBAction func brokerDetailsTapped(sender: AnyObject) {
+        self.performSegueWithIdentifier("BrokerDetails", sender: self)
+        
+    }
     
     
 }

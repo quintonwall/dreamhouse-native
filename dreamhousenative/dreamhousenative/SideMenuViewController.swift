@@ -9,10 +9,26 @@
 import UIKit
 import ENSwiftSideMenu
 import SalesforceSDKCore
+import Spring
 
 
 class SideMenuViewController: UIViewController, ENSideMenuDelegate {
     
+    
+    @IBOutlet weak var homeImage: UIImageView!
+    @IBOutlet weak var bgImage: UIImageView!
+
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+       bgImage.blurImageLightly()
+        
+        //homeImage.layer.cornerRadius = homeImage.frame.size.height / 2
+        //homeImage.layer.masksToBounds = true
+       //homeImage.layer.borderColor = UIColor.whiteColor().CGColor
+        //homeImage.layer.borderWidth = 3.0
+    
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +40,7 @@ class SideMenuViewController: UIViewController, ENSideMenuDelegate {
                 self.performSegueWithIdentifier("welcometour", sender: self)
             }
         } else {
+            //do nothing special.
         }
     }
     
