@@ -1,9 +1,9 @@
 #Dreamhouse-Native
 Dreamhouse-native is a native Swift implementation of the dreamhouse.io sample application for Salesforce App Cloud. Dreamhouse-native leverages the Salesforce Mobile SDK for authorization and data operations. In addition, this app is intended to provide a complete solution-based example of cross-cloud apps including Salesforce App Cloud, Service Cloud, Community Cloud, and Marketing Cloud.
 
-![Side Menu](https://github.com/quintonwall/dreamhouse-native/tree/master/graphics/screenshots/blob/master/side-menu.png?raw=true)
-![Side Menu](https://github.com/quintonwall/dreamhouse-native/tree/master/graphics/screenshots/blob/master/property-details.png?raw=true)
-![Side Menu](https://github.com/quintonwall/dreamhouse-native/tree/master/graphics/screenshots/blob/master/brokers-list.png?raw=true)
+![Side Menu](https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/side-menu.png?raw=true)
+![Side Menu](https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/property-details.png?raw=true)
+![Side Menu](https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/brokers-list.png?raw=true)
 
 ##Next Steps
 1. Finish off favorite duplicate checking (90% complete)
