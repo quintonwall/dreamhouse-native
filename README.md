@@ -17,20 +17,20 @@ DH+ is a native Swift implementation of the <a href="http://dreamhouse.io">Dream
 ###Installation & Configuration
 Further details tdb
 
-##Configure Salesforce Community Cloud
+###Configure Salesforce Community Cloud
 code is implemented. I just need to write the tutorials and config steps
 
-##Configure Salesforce Twitter Social Sign-on
+###Configure Salesforce Twitter Social Sign-on
 code is implemented. I just need to write the tutorials and config steps
 
-##Configure App Cloud Push Notification Service
+###Configure App Cloud Push Notification Service
 code is implemented. I just need to write the tutorials and config steps
 
-##Configure Salesforce Service Cloud SOS Snap-in
+###Configure Salesforce Service Cloud SOS Snap-in
 code is implemented. I just need to write the tutorials and config steps
 
-##Configure Salesforce Marketing Cloud Push Notifications
+###Configure Salesforce Marketing Cloud Push Notifications
 not yet implemented.
 
-##Configure Apple Watch 
+###Configure Apple Watch 
 not yet implemented.
