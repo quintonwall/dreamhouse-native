@@ -1,6 +1,6 @@
-#Dreamhouse Native+
+#Dreamhouse Native+ (DH+)
 ##A cross-cloud Salesforce Solution Sample App
-Dreamhouse-native is a native Swift implementation of the <a href="http://dreamhouse.io">Dreamhouse.io</a> sample application for Salesforce App Cloud. Dreamhouse-native leverages the Salesforce Mobile SDK for authorization and data operations. In addition, this app is intended to provide a complete solution-based example of cross-cloud apps including Salesforce App Cloud, Service Cloud, Community Cloud, and Marketing Cloud.
+DH+ is a native Swift implementation of the <a href="http://dreamhouse.io">Dreamhouse.io</a> sample application for Salesforce App Cloud. Dreamhouse-native leverages the Salesforce Mobile SDK for authorization and data operations. In addition, this app is intended to provide a complete solution-based example of cross-cloud apps including Salesforce App Cloud, Service Cloud, Community Cloud, and Marketing Cloud.
 
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/side-menu.png?raw=true" width=270/> 
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/property-detail.png?raw=true"  width=270 />
