@@ -7,15 +7,17 @@ source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/goinstant/pods-specs-public'
 
 #salesforce pods
-pod 'SalesforceSDKCore'
-pod 'SalesforceNetwork'
-pod 'SalesforceRestAPI'
+#note: because we are using SOS, we need to use the version of the Salesforce
+# Mobile SDK that is bundled within it.
+#pod 'SalesforceSDKCore'
+#pod 'SalesforceNetwork'
+#pod 'SalesforceRestAPI'
 pod 'JB4ASDK'
-pod 'SOS', '1.3.0'
+pod 'SOS'
 
 
 #3rd party pods
-pod 'ENSwiftSideMenu', '~> 0.1.1'
+pod 'ENSwiftSideMenu'
 pod "GoogleMaterialIconFont"
 pod "DGElasticPullToRefresh"
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
