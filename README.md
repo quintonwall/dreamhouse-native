@@ -29,6 +29,8 @@ code is implemented. I just need to write the tutorials and config steps
 
 ###Configure Salesforce Service Cloud SOS Snap-in
 Customers can easily talk with a live broker at any time using the Service Cloud SOS Snap-in. Imagine what your house hunting experience can be like with real-time virtual tours.
+
+
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/sos-agent1.png?raw=true" width=270 />
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/sos-agent2.png?raw=true" width=270 />
 
