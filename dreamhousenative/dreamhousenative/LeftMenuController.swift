@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SalesforceSDKCore
+//import SalesforceSDKCore
 
 class LeftMenuController: UITableViewController {
 

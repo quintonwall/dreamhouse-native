@@ -304,6 +304,11 @@
 					E7362F1A1D405D40006E661F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4X564CR95Y;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

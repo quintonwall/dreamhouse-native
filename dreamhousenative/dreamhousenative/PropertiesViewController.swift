@@ -8,7 +8,7 @@
 
 import UIKit
 import ENSwiftSideMenu
-import SalesforceRestAPI
+//import SalesforceRestAPI
 import SwiftyJSON
 
 class PropertiesViewController: UIViewController, ENSideMenuDelegate {
@@ -81,7 +81,7 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         
         sharedInstance.performSOQLQuery(query, failBlock: { error in
             
-            let alertController = UIAlertController(title: "Error", message: error.description, preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: "Error", message: error!.description, preferredStyle: UIAlertControllerStyle.Alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
                 print("OK")
             }
@@ -91,7 +91,7 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
             
         }) { response in  //success
             
-           self.responseJSON = JSON(response)
+           self.responseJSON = JSON(response!)
             
             
             if let count = self.responseJSON["totalSize"].int {
@@ -196,7 +196,7 @@ extension PropertiesViewController: UITableViewDataSource {
             
               print("SELECTED PROP ID:\(cell.propertyId)")
             let d : NSDictionary = cell.getDictionaryToSaveFavorite()
-            let request = SFRestAPI.sharedInstance().requestForCreateWithObjectType("Favorite__c", fields: d as [NSObject : AnyObject])
+            let request = SFRestAPI.sharedInstance().requestForCreateWithObjectType("Favorite__c", fields: d as? [String : AnyObject] )
             
             SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
                 dispatch_async(dispatch_get_main_queue()) {

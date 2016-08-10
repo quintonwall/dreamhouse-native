@@ -85,6 +85,7 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sideMenuController()?.sideMenu?.delegate = self
+         SCServiceCloud.sharedInstance().sos.addDelegate(self)
         
         //set the map after load for nice zoom effect.
         propertyLocation = CLLocation(latitude: self.property!.latitude!, longitude: self.property!.longitude!)
@@ -120,12 +121,12 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         btn.animation = "zoomIn"
         btn.animate()
         
-       // https://salesforcesos.com/ios/service-sdk/1.0.0/service_sdk_ios/ios_sos_quick_start.htm
-        //https://help.salesforce.com/apex/HTViewHelpDoc?id=service_presence_add_presence_widget_to_console.htm&language=th
+       //see https://resources.docs.salesforce.com/servicesdk/1/0/en-us/pdf/service_sdk_ios.pdf
         
+        
+       SCServiceCloud.sharedInstance().sos.startSessionWithOptions(AppDefaults.getSOSOptions())
+     
 
-        SOSSessionManager.sharedInstance().startSessionWithOptions(AppDefaults.getSOSOptions())
-        //SCSServiceCloud.sharedInstance().sos.startSessionWithOptions(options)
     }
     
     @IBAction func shareButtonTapped(sender: AnyObject) {
@@ -149,5 +150,39 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         
     }
     
+}
+
+extension PropertyDetailsViewController : SOSDelegate {
     
+    func sos(sos: SOSSessionManager!, stateDidChange current: SOSSessionState, previous: SOSSessionState) {
+        if (current == SOSSessionState.Connecting) {
+            print("connecting")
+        }
+    }
+    
+    func sosDidStart(sos: SOSSessionManager!) {
+        print("start")
+    }
+    
+    func sosDidConnect(sos: SOSSessionManager!) {
+        print("connected")
+    }
+    
+    func sos(sos: SOSSessionManager!, didError error: NSError!) {
+        let desc = error.localizedDescription
+        let errorCode :Int = error.code
+        print("something went wrong: \(desc) \(errorCode)")
+        
+        //todo: show dialog on error
+        switch (errorCode) {
+        case SOSErrorCode.SOSNoAgentsAvailableError.rawValue:
+            print("Noagent")
+            break
+        default:
+            break
+        }
+        
+        
+    }
+
 }

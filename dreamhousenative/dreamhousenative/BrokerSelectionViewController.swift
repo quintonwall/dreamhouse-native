@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import SalesforceSDKCore
-import SalesforceRestAPI
+//import SalesforceSDKCore
+//import SalesforceRestAPI
 import SwiftyJSON
 import ENSwiftSideMenu
 
@@ -79,7 +79,7 @@ class BrokerSelectionViewController: JFCardSelectionViewController, ENSideMenuDe
         
         sharedInstance.performSOQLQuery(query, failBlock: { error in
             
-            let alertController = UIAlertController(title: "Error", message: error.description, preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: "Error", message: error!.description, preferredStyle: UIAlertControllerStyle.Alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
                 print("OK")
             }
@@ -89,7 +89,7 @@ class BrokerSelectionViewController: JFCardSelectionViewController, ENSideMenuDe
             
         }) { response in  //success
             
-            self.responseJSON = JSON(response)
+            self.responseJSON = JSON(response!)
             
             
             if let count = self.responseJSON["totalSize"].int {

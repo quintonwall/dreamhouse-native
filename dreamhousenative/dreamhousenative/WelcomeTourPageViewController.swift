@@ -5,7 +5,7 @@
 //  Created by QUINTON WALL on 6/27/16.
 //  Copyright © 2016 QUINTON WALL. All rights reserved.
 //
-import SalesforceSDKCore
+//import SalesforceSDKCore
 
 
 class WelcomeTourPageViewController: UIPageViewController, UIPageViewControllerDataSource, SFAuthenticationManagerDelegate {
@@ -40,7 +40,7 @@ class WelcomeTourPageViewController: UIPageViewController, UIPageViewControllerD
     }
     
     //MARK: salesforce auth
-    func authManagerDidFinish(manager: SFAuthenticationManager!, info: SFOAuthInfo!) {
+    func authManagerDidFinish(manager: SFAuthenticationManager, info: SFOAuthInfo) {
         
         if SFAuthenticationManager.sharedManager().haveValidSession {
             

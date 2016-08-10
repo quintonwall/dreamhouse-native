@@ -7,16 +7,14 @@
 //
 
 import UIKit
-import SalesforceSDKCore
+//import SalesforceSDKCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //salesforce auth
     let RemoteAccessConsumerKey = "3MVG9uudbyLbNPZORlx5pdNbXe.eo_dVK0WlmqUuSbXszEw7gEIKzXkMdZC2IRCPPAJZYZkdeB.Ed0JDG8YSv";
-   //let OAuthRedirectURI        = "https://dreamhousenative-developer-edition.na30.force.com/services/authcallback/00D36000000kFKBEA2/DreamTwitter";
-  // let OAuthRedirectURI        = "https://login.salesforce.com/services/authcallback/00D36000000kFKBEA2/DreamTwitter";
-    let OAuthRedirectURI = "sfdc://success"
+      let OAuthRedirectURI = "sfdc://success"
     let scopes = ["full"];
     
     //dreamhouse@demo2016.com
@@ -32,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         super.init()
         
-        SFLogger.setLogLevel(SFLogLevel.Debug)
+        SFLogger.sharedLogger().logLevel = SFLogLevel.Debug
         
         
        SalesforceSDKManager.sharedManager().connectedAppId = RemoteAccessConsumerKey

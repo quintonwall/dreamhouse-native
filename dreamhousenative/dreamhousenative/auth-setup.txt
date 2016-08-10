@@ -59,7 +59,11 @@ SOS set up:
 
 1. install SOS quickstart package into your org: https://salesforcesos.com
 
-First you need to setup Service Cloud using Setting up SOS in Service Cloud
+First you need to setup Service Cloud using Setting up SOS in Service Cloud. Use the quickstart wizard.
+
+(make sure you create a service cloud console via "Service Cloud Launch Pad" in setup)
+
+I am using Quinton Wall as the live agent user
 
 This should provide you with:
 OrganizationID: 0000000xxxx
@@ -70,11 +74,8 @@ SOS Access URL: https://x.xx.com/sosagentxxx/
 
 Once that is setup you can follow the instructions for setup of iOS or Android
 
-Use Cocoapods, for downloading and managing Repo.
-Pod Instructions:
+https://resources.docs.salesforce.com/servicesdk/1/0/en-us/pdf/service_sdk_ios.pdf
 
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/goinstant/pods-specs-public'
-pod 'SOS'
+
 
 

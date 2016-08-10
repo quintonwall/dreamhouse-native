@@ -8,7 +8,7 @@
 
 import UIKit
 import ENSwiftSideMenu
-import SalesforceSDKCore
+//import SalesforceSDKCore
 import Spring
 
 

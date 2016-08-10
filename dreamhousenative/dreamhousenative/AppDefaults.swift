@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-import SalesforceSDKCore
+//import SalesforceSDKCore
+
 
 class AppDefaults {
     
@@ -23,16 +24,22 @@ class AppDefaults {
     }
     
     static func getUserId() -> String {
-        return SFUserAccountManager.sharedInstance().currentUser.accountIdentity.userId
+        return SFUserAccountManager.sharedInstance().currentUser!.accountIdentity.userId
     }
     
     
-    //docs are old. You need to screenscrape the deployment ID from the javascript snippet
+  
     static func getSOSOptions() -> SOSOptions {
         let options = SOSOptions(liveAgentPod: "d.la4-c1-was.salesforceliveagent.com",
                                  orgId: "00D36000000kFKB",
-                                 deploymentId: "572360000004ZFU")
+                                 deploymentId: "0NW36000000Gmxc")
+        
+        options.featureClientFrontCameraEnabled = true
+        options.featureClientBackCameraEnabled = true
+        //options.initialCameraType = SOSCameraType.FrontFacing
+        options.featureClientScreenSharingEnabled = true
         
         return options
     }
+
 }

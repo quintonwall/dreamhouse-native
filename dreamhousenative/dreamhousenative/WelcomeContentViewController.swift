@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SalesforceSDKCore
+//import SalesforceSDKCore
 
 class WelcomeContentViewController: UIViewController {
     

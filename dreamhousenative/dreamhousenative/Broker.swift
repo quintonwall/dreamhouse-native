@@ -6,7 +6,7 @@
 //  Copyright © 2016 Quinton Wall. All rights reserved.
 //
 
-
+import UIKit
 
 struct Broker {
     var id: String
