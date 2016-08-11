@@ -76,7 +76,7 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         
         //NOTE: Since we are using community users, make sure the profile in the org has Property__c included!
         //fetch everything we need here for the details view as well. This way we avoid a second round trip to the server.
-        let query = String("select Address__c, Baths__c, Beds__c, Broker__c, Broker__r.Title__c, Broker__r.Name, Broker__r.Picture__c, City__c, Description__c, Id, Location__c, Name, OwnerId, Picture__c, Price__c, State__c, Thumbnail__c, Title__c, Zip__c from Property__c")
+        let query = String("select Address__c, Baths__c, Beds__c, Broker__c, Broker__r.Title__c, Broker__r.Name, Broker__r.Picture__c, City__c, Description__c, Id, Location__c, Name, OwnerId, Picture__c, Price__c, State__c, Thumbnail__c, Title__c, Zip__c, (select id, Property__c from Favorites__r) from Property__c")
         
         
         sharedInstance.performSOQLQuery(query, failBlock: { error in
@@ -147,6 +147,11 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         p.brokerTitle = jsonRecord["Broker__r"]["Title__c"].string
         p.brokerImageURL  = jsonRecord["Broker__r"]["Picture__c"].string
         
+        if( jsonRecord["Favorites__r"] != nil) {
+           p.favoriteId =  jsonRecord["Favorites__r"]["records"][0]["Id"].string
+            p.isFavorite = true
+        }
+        
         return p
         
     }
@@ -174,6 +179,8 @@ extension PropertiesViewController: UITableViewDataSource {
         
         
         cell.property = self.prepProperty(responseJSON["records"][indexPath.row])
+        cell.isFavorite = cell.property!.isFavorite
+    
         
         cell.propertyImageUrl = responseJSON["records"][indexPath.row]["Thumbnail__c"].string!
         
@@ -190,40 +197,67 @@ extension PropertiesViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
        
         
-        let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
-            
-            let cell = tableView.cellForRowAtIndexPath(indexPath) as! PropertiesTableViewCell
-            
-              print("SELECTED PROP ID:\(cell.propertyId)")
-            let d : NSDictionary = cell.getDictionaryToSaveFavorite()
-            let request = SFRestAPI.sharedInstance().requestForCreateWithObjectType("Favorite__c", fields: d as? [String : AnyObject] )
-            
-            SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
-                dispatch_async(dispatch_get_main_queue()) {
-                    tableView.setEditing(false, animated: true)
+         let cell = tableView.cellForRowAtIndexPath(indexPath) as! PropertiesTableViewCell
+        
+        if(!cell.property!.isFavorite) {
+            let favAction = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
+                
+                let d : NSDictionary = cell.getDictionaryToSaveFavorite()
+                let request = SFRestAPI.sharedInstance().requestForCreateWithObjectType("Favorite__c", fields: d as? [String : AnyObject] )
+                
+                SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableView.setEditing(false, animated: true)
+                    }
+                    let alertController = UIAlertController(title: "Dreamhouse", message:   "Something went wrong: \(error)", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
+                }) {response in
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableView.setEditing(false, animated: true)
+                    }
+                    let alertController = UIAlertController(title: "Dreamhouse", message:   "Added to favorites.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
                 }
-                let alertController = UIAlertController(title: "Dreamhouse", message:   "Something went wrong: \(error)", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
-                
-            }) {response in
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    tableView.setEditing(false, animated: true)
-                }
-                let alertController = UIAlertController(title: "Dreamhouse", message:   "Added to favorites.", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
-            
             }
+            favAction.backgroundColor = AppDefaults.dreamhouseDarkBlue
+            return [favAction]
+            
+        } else {
+            let unfavAction = UITableViewRowAction(style: .Normal, title: "Unfavorite") { action, index in
+                
+                let request = SFRestAPI.sharedInstance().requestForDeleteWithObjectType("Favorite__c", objectId: cell.property!.favoriteId!)
+                
+                SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableView.setEditing(false, animated: true)
+                    }
+                    let alertController = UIAlertController(title: "Dreamhouse", message:   "Something went wrong: \(error)", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                
+                 }) {response in
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableView.setEditing(false, animated: true)
+                    }
+                    let alertController = UIAlertController(title: "Dreamhouse", message:   "Removed from favorites.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+              }
+            }
+            unfavAction.backgroundColor = AppDefaults.dreamhouseLightBlue
+            return [unfavAction]
+
         }
-        favorite.backgroundColor = AppDefaults.dreamhouseDarkBlue
-        
-        
-        
-        return [favorite]
     }
 }
 

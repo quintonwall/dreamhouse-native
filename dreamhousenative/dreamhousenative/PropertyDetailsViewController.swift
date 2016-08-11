@@ -52,6 +52,13 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         //fetch the image first to kick of the fetch thread
         self.propertyImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!), placeholderImage: UIImage(named: "full-size-icon"))
         
+        favoriteButton.setImage(UIImage(named: "favorite-red-small"), forState: UIControlState.Selected)
+        favoriteButton.setTitle("   Unfavorite", forState: UIControlState.Selected)
+        if(property!.isFavorite) {
+            favoriteButton.selected = true
+            print("Is a favorite")
+            
+        }
         
         mapView.layer.cornerRadius = mapView.frame.size.height / 2
         mapView.layer.masksToBounds = true
@@ -143,6 +150,49 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         btn.animate()
         btn.animation = "zoomIn"
         btn.animate()
+
+        
+        
+        if(!property!.isFavorite) {
+            
+            let d : NSDictionary = property!.getDictionaryToSaveFavorite()
+            let request = SFRestAPI.sharedInstance().requestForCreateWithObjectType("Favorite__c", fields: d as? [String : AnyObject] )
+            
+            SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
+               
+                let alertController = UIAlertController(title: "Dreamhouse", message:   "Something went wrong: \(error)", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+            }) {response in
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.favoriteButton.selected = true
+                    self.property?.isFavorite = true
+                }
+            }
+
+            
+        } else {
+            
+            let request = SFRestAPI.sharedInstance().requestForDeleteWithObjectType("Favorite__c", objectId: property!.favoriteId!)
+            SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in
+                
+                let alertController = UIAlertController(title: "Dreamhouse", message:   "Something went wrong: \(error)", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+            }) {response in
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.favoriteButton.selected = false
+                    self.property?.isFavorite = false
+                }
+            }
+ 
+        }
     }
     
     @IBAction func brokerDetailsTapped(sender: AnyObject) {

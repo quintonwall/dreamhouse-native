@@ -251,20 +251,46 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="favorite-nofill" translatesAutoresizingMaskIntoConstraints="NO" id="p3o-fk-qmK">
+                                                    <rect key="frame" x="8" y="19" width="13" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13" id="Ft4-R7-Shf"/>
+                                                        <constraint firstAttribute="width" constant="13" id="e5n-Px-DK5"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="p3o-fk-qmK" firstAttribute="centerY" secondItem="AR9-Dl-3Q3" secondAttribute="centerY" id="0aA-zY-m48"/>
                                                 <constraint firstItem="qgc-u5-Z3B" firstAttribute="leading" secondItem="wPi-9e-k3L" secondAttribute="trailing" constant="20" id="8jE-qW-4eq"/>
+                                                <constraint firstItem="p3o-fk-qmK" firstAttribute="trailing" secondItem="wPi-9e-k3L" secondAttribute="trailing" id="EEs-yr-iBG"/>
+                                                <constraint firstItem="p3o-fk-qmK" firstAttribute="top" secondItem="wPi-9e-k3L" secondAttribute="bottom" constant="-22" id="EpR-st-KtR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="p3o-fk-qmK" secondAttribute="trailing" id="Kfm-h5-Wsn"/>
+                                                <constraint firstItem="p3o-fk-qmK" firstAttribute="top" secondItem="wPi-9e-k3L" secondAttribute="top" id="QqY-dO-X5o"/>
                                                 <constraint firstItem="Mcb-Uc-0zU" firstAttribute="leading" secondItem="wPi-9e-k3L" secondAttribute="trailing" constant="20" id="U3d-zR-yfb"/>
+                                                <constraint firstItem="p3o-fk-qmK" firstAttribute="leading" secondItem="wPi-9e-k3L" secondAttribute="trailing" constant="-30" id="VaW-FY-xGK"/>
+                                                <constraint firstItem="p3o-fk-qmK" firstAttribute="centerY" secondItem="AR9-Dl-3Q3" secondAttribute="centerY" id="XK6-S5-9VN"/>
                                                 <constraint firstItem="NVZ-wR-ho8" firstAttribute="top" secondItem="Mcb-Uc-0zU" secondAttribute="bottom" constant="-2" id="Yyn-FK-5yY"/>
                                                 <constraint firstItem="NVZ-wR-ho8" firstAttribute="leading" secondItem="qgc-u5-Z3B" secondAttribute="trailing" constant="10" id="g5q-LF-0RZ"/>
                                                 <constraint firstItem="wPi-9e-k3L" firstAttribute="leading" secondItem="AR9-Dl-3Q3" secondAttribute="leadingMargin" constant="20" id="hda-J4-y4A"/>
                                                 <constraint firstItem="wPi-9e-k3L" firstAttribute="centerY" secondItem="AR9-Dl-3Q3" secondAttribute="centerY" id="jd0-5T-xOO"/>
                                                 <constraint firstItem="qgc-u5-Z3B" firstAttribute="top" secondItem="Mcb-Uc-0zU" secondAttribute="bottom" constant="-2" id="rAt-uT-hiK"/>
                                                 <constraint firstItem="Mcb-Uc-0zU" firstAttribute="top" secondItem="AR9-Dl-3Q3" secondAttribute="topMargin" constant="-3" id="rxW-AC-qB2"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="p3o-fk-qmK" secondAttribute="leading" id="wZV-RJ-r0E"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="0aA-zY-m48"/>
+                                                    <exclude reference="EEs-yr-iBG"/>
+                                                    <exclude reference="EpR-st-KtR"/>
+                                                    <exclude reference="Kfm-h5-Wsn"/>
+                                                    <exclude reference="QqY-dO-X5o"/>
+                                                    <exclude reference="VaW-FY-xGK"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cityStateLabel" destination="qgc-u5-Z3B" id="Lqd-93-MbY"/>
+                                            <outlet property="favoriteIndicatorImage" destination="p3o-fk-qmK" id="swL-7j-WH1"/>
                                             <outlet property="priceLabel" destination="NVZ-wR-ho8" id="zwp-4F-hra"/>
                                             <outlet property="propertyImage" destination="wPi-9e-k3L" id="ooq-JO-4xG"/>
                                             <outlet property="titleLabel" destination="Mcb-Uc-0zU" id="C6F-Kk-pRP"/>
@@ -1421,6 +1447,7 @@
         <image name="button-twitter" width="15" height="13"/>
         <image name="cocktail" width="138" height="150"/>
         <image name="favorite" width="22" height="24"/>
+        <image name="favorite-nofill" width="17" height="14"/>
         <image name="grass" width="500" height="334"/>
         <image name="hamburger" width="22" height="12"/>
         <image name="logout" width="22" height="22"/>

@@ -26,6 +26,7 @@ class Property {
     var numberOfBeds: Int?
     var longitude: Double?
     var latitude: Double?
+    var isFavorite: Bool = false
     
     //broker info
     var brokerId: String?
@@ -33,5 +34,16 @@ class Property {
     var brokerTitle: String?
     var brokerImageURL: String?
     
+    //favorite
+    var favoriteId: String?
     
+    func getDictionaryToSaveFavorite() -> NSDictionary {
+        let d : NSDictionary = [
+            "Property__c" : propertyId!,
+            "User__c" : AppDefaults.getUserId()
+        ]
+        
+        return d
+        
+    }
 }

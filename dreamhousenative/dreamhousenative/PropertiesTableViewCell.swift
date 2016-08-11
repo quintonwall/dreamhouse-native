@@ -13,6 +13,7 @@ class PropertiesTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var propertyImage: UIImageView!
+    @IBOutlet weak var favoriteIndicatorImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cityStateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -20,6 +21,17 @@ class PropertiesTableViewCell: UITableViewCell {
     var property : Property?
     
     var propertyId : String!
+    
+    var isFavorite : Bool  = false {
+        didSet {
+            if (isFavorite) {
+                favoriteIndicatorImage.hidden = false
+            } else {
+                 favoriteIndicatorImage.hidden = true
+                
+            }
+        }
+    }
     
     var propertyImageUrl = "" {
         didSet {
