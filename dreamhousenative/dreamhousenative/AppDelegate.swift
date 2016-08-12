@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import ZAlertView
+import SwiftyJSON
+
 //import SalesforceSDKCore
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -78,10 +82,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     //MARK: lifecycle events
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Failed to get device token for push notification: \(error.description)")
+    }
+    
+    
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        SFPushNotificationManager.sharedInstance().didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
+        print("Regisitering with Salesforce Push Notifications using token: \(AppDefaults.formatDeviceToken(deviceToken))")
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //register for salesforce push notifications
+        //if(AppDefaults.isLoggedIn()) {
+            registerForPushNotifications(application)
+            SFPushNotificationManager.sharedInstance().registerForRemoteNotifications()
+       // }
         return true
+    }
+    
+    func registerForPushNotifications(application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        //just in case the user didnt allow push notifications of any type
+       // if notificationSettings.types != .None {
+       //     registerForPushNotifications(application)
+      //  }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        let jsoninfo :JSON = JSON(userInfo)
+        
+        
+        if ( application.applicationState == UIApplicationState.Inactive
+            || application.applicationState == UIApplicationState.Background  ) {
+            //no need to do anything extra here.
+        } else {
+            //but for times when we get a notification while the app is active, lets do something fun
+            let dialog = ZAlertView(title: "Heads Up",
+                                    message: jsoninfo["aps"]["alert"].string,
+                                    closeButtonText: "Okay",
+                                    closeButtonHandler: { alertView in
+                                        alertView.dismiss()
+                }
+            )
+            dialog.allowTouchOutsideToDismiss = false
+            //let attrStr = NSMutableAttributedString(string: "Are you sure you want to quit?")
+            //attrStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: NSMakeRange(10, 12))
+            //dialog.messageAttributedString = attrStr
+            dialog.show()
+
+    
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -108,4 +167,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 

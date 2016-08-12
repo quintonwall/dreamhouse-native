@@ -23,5 +23,6 @@ pod "DGElasticPullToRefresh"
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 pod 'SwiftyJSON'
 pod 'SDWebImage', '~>3.8'
+pod 'ZAlertView'
 
 end

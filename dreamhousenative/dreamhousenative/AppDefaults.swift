@@ -41,5 +41,28 @@ class AppDefaults {
         
         return options
     }
+    
+    static func formatDeviceToken(deviceToken: NSData) -> String {
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        for i in 0..<deviceToken.length {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+       return tokenString
+    }
+    
+    static func getPushNotificationMessageFromAPS(userInfo: NSDictionary) -> String {
+        var alertMsg = ""
+        if let aps = userInfo["aps"] as? NSDictionary {
+            if let alert = aps["alert"] as? NSDictionary {
+                if let message = alert["message"] as? NSString {
+                    alertMsg = message as String
+                }
+            }
+        }
+        return alertMsg
+    }
 
 }
