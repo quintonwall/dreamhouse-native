@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--My Dreamhouse-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="home" title="My Dreamhouse" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DH_Watch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="0so-rB-bdZ">
+                            <items>
+                                <button width="1" alignment="left" title="Properties" backgroundImage="watch-btn-properties" id="77V-IZ-Ncy">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="15"/>
+                                    <connections>
+                                        <action selector="propertiesButtonTapped" destination="AgC-eL-Hgc" id="YVa-F4-gvt"/>
+                                        <segue destination="XiM-Td-2Q9" kind="push" id="VtM-Us-L33"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Favorites" backgroundImage="watch-btn-favorites" id="szL-OI-H3H">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="thin" pointSize="15"/>
+                                    <connections>
+                                        <action selector="favoritesButtonTapped" destination="AgC-eL-Hgc" id="pqA-Fu-XcF"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="favoritesButton" destination="szL-OI-H3H" id="oNg-ej-QPR"/>
+                        <outlet property="propertiesButton" destination="77V-IZ-Ncy" id="Rba-yv-qOb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--PropertiesList-->
+        <scene sceneID="P8Y-XQ-L3v">
+            <objects>
+                <controller identifier="PropertiesList" id="XiM-Td-2Q9" customClass="PropertiesListController" customModule="DH_Watch_Extension">
+                    <items>
+                        <table alignment="left" id="Rwc-ad-3DB">
+                            <items>
+                                <tableRow identifier="PropertyRows" id="tfX-00-GbI" customClass="PropertyListRow" customModule="DH_Watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="XSr-xk-0Hz">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Description" textAlignment="center" id="sby-nT-Gl0"/>
+                                            <label alignment="center" text="$100,000" textAlignment="center" id="goa-0n-yJ5"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="group" destination="XSr-xk-0Hz" id="eLH-Cx-WAM"/>
+                                        <outlet property="propertyDescription" destination="sby-nT-Gl0" id="DQk-Yx-yYO"/>
+                                        <outlet property="propertyPrice" destination="goa-0n-yJ5" id="omW-Ng-LIJ"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="propertiesTable" destination="Rwc-ad-3DB" id="xne-Ni-awk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="573" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="DH_Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

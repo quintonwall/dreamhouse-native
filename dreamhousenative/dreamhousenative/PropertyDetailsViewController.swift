@@ -155,7 +155,13 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         
         if(!property!.isFavorite) {
             
-            let d : NSDictionary = property!.getDictionaryToSaveFavorite()
+            //let d : NSDictionary = property!.getDictionaryToSaveFavorite()
+            
+            let d : NSDictionary = [
+                "Property__c" : property!.propertyId!,
+                "User__c" : AppDefaults.getUserId()
+            ]
+            
             let request = SFRestAPI.sharedInstance().requestForCreateWithObjectType("Favorite__c", fields: d as? [String : AnyObject] )
             
             SFRestAPI.sharedInstance().sendRESTRequest(request, failBlock: { error in

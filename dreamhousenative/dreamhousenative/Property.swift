@@ -37,6 +37,7 @@ class Property {
     //favorite
     var favoriteId: String?
     
+    /*
     func getDictionaryToSaveFavorite() -> NSDictionary {
         let d : NSDictionary = [
             "Property__c" : propertyId!,
@@ -44,6 +45,7 @@ class Property {
         ]
         
         return d
-        
+
     }
+ */
 }

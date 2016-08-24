@@ -11,6 +11,7 @@ import ENSwiftSideMenu
 
 class NotImplementedYetController: UIViewController, ENSideMenuDelegate {
     
+    @IBOutlet weak var poopButton: UIButton!
     @IBOutlet weak var poopImage: UIImageView!
     
     override func viewDidLoad() {
@@ -27,5 +28,8 @@ class NotImplementedYetController: UIViewController, ENSideMenuDelegate {
         toggleSideMenuView()
     }
 
+    @IBAction func poopTapped(sender: AnyObject) {
+        PropertiesHandler.getAllProperties()
+    }
 
 }

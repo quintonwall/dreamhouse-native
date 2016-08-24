@@ -76,10 +76,7 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         
         //NOTE: Since we are using community users, make sure the profile in the org has Property__c included!
         //fetch everything we need here for the details view as well. This way we avoid a second round trip to the server.
-        let query = String("select Address__c, Baths__c, Beds__c, Broker__c, Broker__r.Title__c, Broker__r.Name, Broker__r.Picture__c, City__c, Description__c, Id, Location__c, Name, OwnerId, Picture__c, Price__c, State__c, Thumbnail__c, Title__c, Zip__c, (select id, Property__c from Favorites__r) from Property__c")
-        
-        
-        sharedInstance.performSOQLQuery(query, failBlock: { error in
+        sharedInstance.performSOQLQuery(PropertiesHandler.soqlGetAllProperties, failBlock: { error in
             
             let alertController = UIAlertController(title: "Error", message: error!.description, preferredStyle: UIAlertControllerStyle.Alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in

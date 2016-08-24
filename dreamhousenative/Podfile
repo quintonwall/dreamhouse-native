@@ -1,28 +1,46 @@
-platform :ios, '9.0'
 use_frameworks!
 
+#pods shared between the phone and watch app
+def shared_pods
+ pod 'SwiftyJSON'
+end
+
 target 'DHNative' do
-source 'https://github.com/forcedotcom/SalesforceMobileSDK-iOS-Specs.git' 
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/goinstant/pods-specs-public'
+  platform :ios, '9.0'
+  source 'https://github.com/forcedotcom/SalesforceMobileSDK-iOS-Specs.git' 
+  source 'https://github.com/CocoaPods/Specs.git'
+  source 'https://github.com/goinstant/pods-specs-public'
 
-#salesforce pods
-#note: because we are using SOS, we need to use the version of the Salesforce
-# Mobile SDK that is bundled within it.
-#pod 'SalesforceSDKCore'
-#pod 'SalesforceNetwork'
-#pod 'SalesforceRestAPI'
-pod 'JB4ASDK'
-pod 'SOS'
+  #salesforce pods
+  #note: because we are using SOS, we need to use the version of the Salesforce
+  # Mobile SDK that is bundled within it.
+  #pod 'SalesforceSDKCore'
+  #pod 'SalesforceNetwork'
+  #pod 'SalesforceRestAPI'
+  pod 'JB4ASDK'
+  pod 'SOS'
 
 
-#3rd party pods
-pod 'ENSwiftSideMenu'
-pod "GoogleMaterialIconFont"
-pod "DGElasticPullToRefresh"
-pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
-pod 'SwiftyJSON'
-pod 'SDWebImage', '~>3.8'
-pod 'ZAlertView'
+  #3rd party pods
+  pod 'ENSwiftSideMenu'
+  pod "GoogleMaterialIconFont"
+  pod "DGElasticPullToRefresh"
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
+  pod 'SDWebImage', '~>3.8'
+  pod 'ZAlertView'
+
+  shared_pods
 
 end
+
+target 'DH+Watch' do
+  platform :watchos, '2.0'
+  shared_pods
+end
+
+target 'DH+Watch Extension' do
+  platform :watchos, '2.0'
+  shared_pods
+end
+
+

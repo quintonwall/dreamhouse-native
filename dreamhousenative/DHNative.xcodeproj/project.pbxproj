@@ -31,6 +31,21 @@
 		5A5380A71D4E7C92004A418F /* JFCardSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5380A51D4E7C92004A418F /* JFCardSelectionCell.xib */; };
 		5A5380A81D4E7C92004A418F /* JFFocusedCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5380A61D4E7C92004A418F /* JFFocusedCardView.xib */; };
 		5A5380AB1D4EA3DC004A418F /* NotImplementedYetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5380AA1D4EA3DC004A418F /* NotImplementedYetController.swift */; };
+		5A6328201D5D4C78003D9386 /* SwiftyAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A63281F1D5D4C78003D9386 /* SwiftyAvatar.swift */; };
+		5A6D84F81D6CFD1700951C09 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2991D483D7400ACBA5E /* JSON.swift */; };
+		5A6D84F91D6CFD6700951C09 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F3E1D413729006E661F /* UIColor.swift */; };
+		5A6D84FA1D6D011A00951C09 /* PropertiesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8183891D6CC499003918FC /* PropertiesHandler.swift */; };
+		5A6D84FC1D6D08FF00951C09 /* PropertyListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D84FB1D6D08FF00951C09 /* PropertyListRow.swift */; };
+		5A8183631D6CB0F4003918FC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8183611D6CB0F4003918FC /* Interface.storyboard */; };
+		5A8183651D6CB0F4003918FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8183641D6CB0F4003918FC /* Assets.xcassets */; };
+		5A81836C1D6CB0F4003918FC /* DH+Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A81836B1D6CB0F4003918FC /* DH+Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A8183731D6CB0F4003918FC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8183721D6CB0F4003918FC /* InterfaceController.swift */; };
+		5A8183751D6CB0F4003918FC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8183741D6CB0F4003918FC /* ExtensionDelegate.swift */; };
+		5A8183771D6CB0F4003918FC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8183761D6CB0F4003918FC /* NotificationController.swift */; };
+		5A8183791D6CB0F4003918FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8183781D6CB0F4003918FC /* Assets.xcassets */; };
+		5A81837D1D6CB0F4003918FC /* DH+Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5A81835F1D6CB0F4003918FC /* DH+Watch.app */; };
+		5A8183871D6CC101003918FC /* PropertiesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8183861D6CC101003918FC /* PropertiesListController.swift */; };
+		5A8183881D6CC261003918FC /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A20F59C1D49425900E69D66 /* Property.swift */; };
 		5AB7E2861D47C9A100ACBA5E /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2851D47C9A100ACBA5E /* SideMenuViewController.swift */; };
 		5AB7E2881D47CA2F00ACBA5E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2871D47CA2F00ACBA5E /* MainNavigationController.swift */; };
 		5AB7E28D1D47D6BC00ACBA5E /* WelcomeTourPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E28B1D47D6BC00ACBA5E /* WelcomeTourPageViewController.swift */; };
@@ -41,6 +56,8 @@
 		5AB7E2981D48371C00ACBA5E /* PropertiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2971D48371C00ACBA5E /* PropertiesTableViewCell.swift */; };
 		5AB7E29A1D483D7400ACBA5E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7E2991D483D7400ACBA5E /* JSON.swift */; };
 		5AD34F221D49376700FA40C0 /* PropertyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD34F211D49376700FA40C0 /* PropertyDetailsViewController.swift */; };
+		93A28500B0669E0D9A6780F1 /* Pods_DH_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB45A7431F5FBA5D059325 /* Pods_DH_Watch.framework */; };
+		BE42295BE224F4A09858D3BF /* Pods_DH_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1AACEF2DAEF5C79F2F19D2 /* Pods_DH_Watch_Extension.framework */; };
 		C1F9A14D3C175BFCF7501755 /* Pods_DHNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44040E52B74B730AB9FDDED1 /* Pods_DHNative.framework */; };
 		E7362F1F1D405D41006E661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F1E1D405D41006E661F /* AppDelegate.swift */; };
 		E7362F211D405D41006E661F /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F201D405D41006E661F /* SideViewController.swift */; };
@@ -51,8 +68,52 @@
 		E7362F3F1D413729006E661F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F3E1D413729006E661F /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A81836D1D6CB0F4003918FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7362F131D405D40006E661F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A81836A1D6CB0F4003918FC;
+			remoteInfo = "DH+Watch Extension";
+		};
+		5A81837B1D6CB0F4003918FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7362F131D405D40006E661F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A81835E1D6CB0F4003918FC;
+			remoteInfo = "DH+Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5A8183831D6CB0F4003918FC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A81836C1D6CB0F4003918FC /* DH+Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A8183851D6CB0F4003918FC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5A81837D1D6CB0F4003918FC /* DH+Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		01CB45A7431F5FBA5D059325 /* Pods_DH_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DH_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2156374A2CB1C0E3E68EAF31 /* Pods_dreamhousenative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dreamhousenative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7E1E74EBF84252EBDA1006 /* Pods-DH+Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DH+Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DH+Watch Extension/Pods-DH+Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		44040E52B74B730AB9FDDED1 /* Pods_DHNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DHNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1500F71D415F2200C0AF61 /* auth-setup.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "auth-setup.txt"; sourceTree = "<group>"; };
 		5A20F59C1D49425900E69D66 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -78,6 +139,22 @@
 		5A5380A51D4E7C92004A418F /* JFCardSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFCardSelectionCell.xib; sourceTree = "<group>"; };
 		5A5380A61D4E7C92004A418F /* JFFocusedCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFFocusedCardView.xib; sourceTree = "<group>"; };
 		5A5380AA1D4EA3DC004A418F /* NotImplementedYetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotImplementedYetController.swift; sourceTree = "<group>"; };
+		5A63281F1D5D4C78003D9386 /* SwiftyAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyAvatar.swift; sourceTree = "<group>"; };
+		5A6D84FB1D6D08FF00951C09 /* PropertyListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListRow.swift; sourceTree = "<group>"; };
+		5A81835F1D6CB0F4003918FC /* DH+Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DH+Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A8183621D6CB0F4003918FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5A8183641D6CB0F4003918FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A8183661D6CB0F4003918FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A81836B1D6CB0F4003918FC /* DH+Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DH+Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A8183711D6CB0F4003918FC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5A8183721D6CB0F4003918FC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5A8183741D6CB0F4003918FC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5A8183761D6CB0F4003918FC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		5A8183781D6CB0F4003918FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A81837A1D6CB0F4003918FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A8183861D6CC101003918FC /* PropertiesListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesListController.swift; sourceTree = "<group>"; };
+		5A8183891D6CC499003918FC /* PropertiesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesHandler.swift; sourceTree = "<group>"; };
+		5A81838B1D6CF8AD003918FC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		5AB7E2851D47C9A100ACBA5E /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		5AB7E2871D47CA2F00ACBA5E /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		5AB7E28B1D47D6BC00ACBA5E /* WelcomeTourPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTourPageViewController.swift; sourceTree = "<group>"; };
@@ -89,9 +166,13 @@
 		5AB7E2991D483D7400ACBA5E /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		5AD34F211D49376700FA40C0 /* PropertyDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyDetailsViewController.swift; sourceTree = "<group>"; };
 		5D7EFEC69DB6449BC013DC74 /* Pods-DHNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DHNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DHNative/Pods-DHNative.debug.xcconfig"; sourceTree = "<group>"; };
+		6F1AACEF2DAEF5C79F2F19D2 /* Pods_DH_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DH_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77014F41BBFC1FD6493AB75A /* Pods-DH+Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DH+Watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-DH+Watch/Pods-DH+Watch.release.xcconfig"; sourceTree = "<group>"; };
 		7BF0F450990713DEDED3B13D /* Pods-DHNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DHNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-DHNative/Pods-DHNative.release.xcconfig"; sourceTree = "<group>"; };
 		A14A3CCDF77D46BEC105A40C /* Pods-dreamhousenative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamhousenative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dreamhousenative/Pods-dreamhousenative.debug.xcconfig"; sourceTree = "<group>"; };
 		A565D14EC170378E2A43F2BD /* Pods-dreamhousenative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamhousenative.release.xcconfig"; path = "Pods/Target Support Files/Pods-dreamhousenative/Pods-dreamhousenative.release.xcconfig"; sourceTree = "<group>"; };
+		C54D808A8C18688FEDAD21D6 /* Pods-DH+Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DH+Watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DH+Watch/Pods-DH+Watch.debug.xcconfig"; sourceTree = "<group>"; };
+		CBF2436DB8001C01C757CC9D /* Pods-DH+Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DH+Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-DH+Watch Extension/Pods-DH+Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		E7362F1B1D405D41006E661F /* DHNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7362F1E1D405D41006E661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7362F201D405D41006E661F /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +186,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A8183681D6CB0F4003918FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE42295BE224F4A09858D3BF /* Pods_DH_Watch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC3FBA1C1BCF013880A629F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93A28500B0669E0D9A6780F1 /* Pods_DH_Watch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7362F181D405D40006E661F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,8 +216,11 @@
 		1F5DA79EDFFE063C829332C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A81838B1D6CF8AD003918FC /* SwiftyJSON.framework */,
 				2156374A2CB1C0E3E68EAF31 /* Pods_dreamhousenative.framework */,
 				44040E52B74B730AB9FDDED1 /* Pods_DHNative.framework */,
+				01CB45A7431F5FBA5D059325 /* Pods_DH_Watch.framework */,
+				6F1AACEF2DAEF5C79F2F19D2 /* Pods_DH_Watch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,6 +232,7 @@
 				5AB7E2971D48371C00ACBA5E /* PropertiesTableViewCell.swift */,
 				5AD34F211D49376700FA40C0 /* PropertyDetailsViewController.swift */,
 				5A20F59C1D49425900E69D66 /* Property.swift */,
+				5A8183891D6CC499003918FC /* PropertiesHandler.swift */,
 			);
 			name = properties;
 			sourceTree = "<group>";
@@ -172,6 +273,47 @@
 			name = JFCard;
 			sourceTree = "<group>";
 		};
+		5A63281E1D5D4C5F003D9386 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5A63281F1D5D4C78003D9386 /* SwiftyAvatar.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		5A8183601D6CB0F4003918FC /* DH+Watch */ = {
+			isa = PBXGroup;
+			children = (
+				5A8183611D6CB0F4003918FC /* Interface.storyboard */,
+				5A8183641D6CB0F4003918FC /* Assets.xcassets */,
+				5A8183661D6CB0F4003918FC /* Info.plist */,
+			);
+			path = "DH+Watch";
+			sourceTree = "<group>";
+		};
+		5A81836F1D6CB0F4003918FC /* DH+Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A8183721D6CB0F4003918FC /* InterfaceController.swift */,
+				5A8183741D6CB0F4003918FC /* ExtensionDelegate.swift */,
+				5A8183761D6CB0F4003918FC /* NotificationController.swift */,
+				5A8183781D6CB0F4003918FC /* Assets.xcassets */,
+				5A81837A1D6CB0F4003918FC /* Info.plist */,
+				5A8183701D6CB0F4003918FC /* Supporting Files */,
+				5A8183861D6CC101003918FC /* PropertiesListController.swift */,
+				5A6D84FB1D6D08FF00951C09 /* PropertyListRow.swift */,
+			);
+			path = "DH+Watch Extension";
+			sourceTree = "<group>";
+		};
+		5A8183701D6CB0F4003918FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A8183711D6CB0F4003918FC /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5AB7E28F1D47D88A00ACBA5E /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +342,10 @@
 				A565D14EC170378E2A43F2BD /* Pods-dreamhousenative.release.xcconfig */,
 				5D7EFEC69DB6449BC013DC74 /* Pods-DHNative.debug.xcconfig */,
 				7BF0F450990713DEDED3B13D /* Pods-DHNative.release.xcconfig */,
+				C54D808A8C18688FEDAD21D6 /* Pods-DH+Watch.debug.xcconfig */,
+				77014F41BBFC1FD6493AB75A /* Pods-DH+Watch.release.xcconfig */,
+				2F7E1E74EBF84252EBDA1006 /* Pods-DH+Watch Extension.debug.xcconfig */,
+				CBF2436DB8001C01C757CC9D /* Pods-DH+Watch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -208,6 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				E7362F1D1D405D41006E661F /* dreamhousenative */,
+				5A8183601D6CB0F4003918FC /* DH+Watch */,
+				5A81836F1D6CB0F4003918FC /* DH+Watch Extension */,
 				E7362F1C1D405D41006E661F /* Products */,
 				874E50293A93FDD674B54C8D /* Pods */,
 				1F5DA79EDFFE063C829332C3 /* Frameworks */,
@@ -218,6 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				E7362F1B1D405D41006E661F /* DHNative.app */,
+				5A81835F1D6CB0F4003918FC /* DH+Watch.app */,
+				5A81836B1D6CB0F4003918FC /* DH+Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +375,7 @@
 		E7362F1D1D405D41006E661F /* dreamhousenative */ = {
 			isa = PBXGroup;
 			children = (
+				5A63281E1D5D4C5F003D9386 /* Components */,
 				5A5380631D4E6B1A004A418F /* thirdParty */,
 				5AB7E2901D47D89F00ACBA5E /* SideNav */,
 				5AB7E28F1D47D88A00ACBA5E /* Tabs */,
@@ -271,6 +422,46 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A81835E1D6CB0F4003918FC /* DH+Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A8183841D6CB0F4003918FC /* Build configuration list for PBXNativeTarget "DH+Watch" */;
+			buildPhases = (
+				D2E4DBE3A01FA97F6E876349 /* [CP] Check Pods Manifest.lock */,
+				5A81835D1D6CB0F4003918FC /* Resources */,
+				5A8183831D6CB0F4003918FC /* Embed App Extensions */,
+				CC3FBA1C1BCF013880A629F7 /* Frameworks */,
+				15A60DC48609D886038FAA29 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A81836E1D6CB0F4003918FC /* PBXTargetDependency */,
+			);
+			name = "DH+Watch";
+			productName = "DH+Watch";
+			productReference = 5A81835F1D6CB0F4003918FC /* DH+Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5A81836A1D6CB0F4003918FC /* DH+Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A8183821D6CB0F4003918FC /* Build configuration list for PBXNativeTarget "DH+Watch Extension" */;
+			buildPhases = (
+				8CFC115367475E77CE379F16 /* [CP] Check Pods Manifest.lock */,
+				5A8183671D6CB0F4003918FC /* Sources */,
+				5A8183681D6CB0F4003918FC /* Frameworks */,
+				5A8183691D6CB0F4003918FC /* Resources */,
+				5E285C17CA8BBE05AE557240 /* [CP] Embed Pods Frameworks */,
+				1BADBE3D500D5A08F18B22BF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DH+Watch Extension";
+			productName = "DH+Watch Extension";
+			productReference = 5A81836B1D6CB0F4003918FC /* DH+Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		E7362F1A1D405D40006E661F /* DHNative */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7362F2D1D405D41006E661F /* Build configuration list for PBXNativeTarget "DHNative" */;
@@ -281,10 +472,12 @@
 				E7362F191D405D40006E661F /* Resources */,
 				8C961B1A10F6E3781A336E23 /* [CP] Embed Pods Frameworks */,
 				D5AC59111E97E4B5B7D1462E /* [CP] Copy Pods Resources */,
+				5A8183851D6CB0F4003918FC /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5A81837C1D6CB0F4003918FC /* PBXTargetDependency */,
 			);
 			name = DHNative;
 			productName = dreamhousenative;
@@ -301,11 +494,21 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Quinton Wall";
 				TargetAttributes = {
+					5A81835E1D6CB0F4003918FC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4X564CR95Y;
+					};
+					5A81836A1D6CB0F4003918FC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					E7362F1A1D405D40006E661F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4X564CR95Y;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -326,11 +529,30 @@
 			projectRoot = "";
 			targets = (
 				E7362F1A1D405D40006E661F /* DHNative */,
+				5A81835E1D6CB0F4003918FC /* DH+Watch */,
+				5A81836A1D6CB0F4003918FC /* DH+Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A81835D1D6CB0F4003918FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A8183651D6CB0F4003918FC /* Assets.xcassets in Resources */,
+				5A8183631D6CB0F4003918FC /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A8183691D6CB0F4003918FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A8183791D6CB0F4003918FC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7362F191D405D40006E661F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,6 +569,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		15A60DC48609D886038FAA29 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DH+Watch/Pods-DH+Watch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BADBE3D500D5A08F18B22BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DH+Watch Extension/Pods-DH+Watch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4093471C8830DA067FAD55DE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +614,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		5E285C17CA8BBE05AE557240 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DH+Watch Extension/Pods-DH+Watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8C961B1A10F6E3781A336E23 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,6 +642,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DHNative/Pods-DHNative-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CFC115367475E77CE379F16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2E4DBE3A01FA97F6E876349 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D5AC59111E97E4B5B7D1462E /* [CP] Copy Pods Resources */ = {
@@ -395,6 +692,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A8183671D6CB0F4003918FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A8183881D6CC261003918FC /* Property.swift in Sources */,
+				5A6D84FC1D6D08FF00951C09 /* PropertyListRow.swift in Sources */,
+				5A8183771D6CB0F4003918FC /* NotificationController.swift in Sources */,
+				5A6D84F91D6CFD6700951C09 /* UIColor.swift in Sources */,
+				5A8183751D6CB0F4003918FC /* ExtensionDelegate.swift in Sources */,
+				5A8183871D6CC101003918FC /* PropertiesListController.swift in Sources */,
+				5A8183731D6CB0F4003918FC /* InterfaceController.swift in Sources */,
+				5A6D84F81D6CFD1700951C09 /* JSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7362F171D405D40006E661F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,9 +729,11 @@
 				5A53809C1D4E6E0D004A418F /* String.swift in Sources */,
 				E7362F1F1D405D41006E661F /* AppDelegate.swift in Sources */,
 				5AB7E28E1D47D6BC00ACBA5E /* WelcomeContentViewController.swift in Sources */,
+				5A6328201D5D4C78003D9386 /* SwiftyAvatar.swift in Sources */,
 				5A5380901D4E6CA8004A418F /* JFCardSelectionViewController.swift in Sources */,
 				5A5380A41D4E6F89004A418F /* Broker.swift in Sources */,
 				5AB7E2941D48233700ACBA5E /* UIImageView.swift in Sources */,
+				5A6D84FA1D6D011A00951C09 /* PropertiesHandler.swift in Sources */,
 				5AB7E2981D48371C00ACBA5E /* PropertiesTableViewCell.swift in Sources */,
 				5A5380921D4E6CA8004A418F /* JFCardSelectionViewController+JFFocusedCardViewDelegate.swift in Sources */,
 				5A53808D1D4E6CA8004A418F /* AccessoryIndicator.swift in Sources */,
@@ -439,7 +753,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5A81836E1D6CB0F4003918FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A81836A1D6CB0F4003918FC /* DH+Watch Extension */;
+			targetProxy = 5A81836D1D6CB0F4003918FC /* PBXContainerItemProxy */;
+		};
+		5A81837C1D6CB0F4003918FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A81835E1D6CB0F4003918FC /* DH+Watch */;
+			targetProxy = 5A81837B1D6CB0F4003918FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		5A8183611D6CB0F4003918FC /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A8183621D6CB0F4003918FC /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		E7362F221D405D41006E661F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -459,6 +794,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5A81837E1D6CB0F4003918FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C54D808A8C18688FEDAD21D6 /* Pods-DH+Watch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = DH_Watch_Extension;
+				INFOPLIST_FILE = "DH+Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = gyspycode.dreamhousenative.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		5A81837F1D6CB0F4003918FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77014F41BBFC1FD6493AB75A /* Pods-DH+Watch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = DH_Watch_Extension;
+				INFOPLIST_FILE = "DH+Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = gyspycode.dreamhousenative.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		5A8183801D6CB0F4003918FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F7E1E74EBF84252EBDA1006 /* Pods-DH+Watch Extension.debug.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftyJSON",
+				);
+				INFOPLIST_FILE = "DH+Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gyspycode.dreamhousenative.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		5A8183811D6CB0F4003918FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBF2436DB8001C01C757CC9D /* Pods-DH+Watch Extension.release.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftyJSON",
+				);
+				INFOPLIST_FILE = "DH+Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gyspycode.dreamhousenative.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 		E7362F2B1D405D41006E661F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -575,6 +988,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A8183821D6CB0F4003918FC /* Build configuration list for PBXNativeTarget "DH+Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A8183801D6CB0F4003918FC /* Debug */,
+				5A8183811D6CB0F4003918FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A8183841D6CB0F4003918FC /* Build configuration list for PBXNativeTarget "DH+Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A81837E1D6CB0F4003918FC /* Debug */,
+				5A81837F1D6CB0F4003918FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E7362F161D405D40006E661F /* Build configuration list for PBXProject "DHNative" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
