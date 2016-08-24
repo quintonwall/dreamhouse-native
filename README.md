@@ -9,10 +9,9 @@ DH+ is a native Swift implementation of the <a href="http://dreamhouse.io">Dream
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/sos-agent2.png?raw=true" width=270 />
 
 ##Next Steps
-1. Finish off favorite duplicate checking (90% complete)
-2. Implement Apple Watch app (not started)
-3. Add Salesforce Marketing Cloud Journey Builder support (not started)
-5. Write a bunch of tutorials (10% complete)
+1. Implement Apple Watch app (30% complete started)
+2. Add Salesforce Marketing Cloud Journey Builder support (not started)
+3. Write a bunch of tutorials (10% complete)
 
 ##Getting Started
 ###Installation & Configuration
@@ -39,3 +38,4 @@ not yet implemented.
 
 ###Configure Apple Watch 
 not yet implemented.
+
