@@ -22,21 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let OAuthRedirectURI = "sfdc://success"
     let scopes = ["full"];
     
+    let propertiesHandler: PropertiesHandler = PropertiesHandler()
+    
     //dreamhouse@demo2016.com
    
     
     var window: UIWindow?
     
-    //watchkit session
-    var session: WCSession? {
-        didSet {
-            if let session = session {
-                session.delegate = self
-                session.activateSession()
-            }
-        }
-    }
-
 
     //MARK: Salesforce auth stuff
     override
@@ -45,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.init()
         
         SFLogger.sharedLogger().logLevel = SFLogLevel.Debug
+        
+        //register for watchkit sessions
+        propertiesHandler.register()
         
         
        SalesforceSDKManager.sharedManager().connectedAppId = RemoteAccessConsumerKey
@@ -105,12 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        //register for watchkit
-        if WCSession.isSupported() {
-            session = WCSession.defaultSession()
-        }
-        
+              
         //register for salesforce push notifications
         //if(AppDefaults.isLoggedIn()) {
             registerForPushNotifications(application)
@@ -183,20 +173,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-
-//MARK: Watch Kit
-extension AppDelegate: WCSessionDelegate {
-    
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        if let reference = message["get-property"] as? String {
-            if (reference == "all") {
-                replyHandler(["property": PropertiesHandler.getAllProperties()])
-            } else {
-                replyHandler(["property": PropertiesHandler.getPropertyById(reference)])
-            }
-        }
-    }
-    
-}
 
 

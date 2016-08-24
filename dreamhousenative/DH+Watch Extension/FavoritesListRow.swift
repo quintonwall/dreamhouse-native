@@ -1,15 +1,15 @@
 //
-//  PropertyListRow.swift
+//  FavoritesListRow.swift
 //  DHNative
 //
-//  Created by QUINTON WALL on 8/23/16.
+//  Created by QUINTON WALL on 8/24/16.
 //  Copyright © 2016 Quinton Wall. All rights reserved.
 //
 
 import Foundation
 import WatchKit
 
-class PropertyListRow : NSObject {
+class FavoritesListRow : NSObject {
     
     var recordId: String!
     var propertyUrl: String!

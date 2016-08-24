@@ -29,7 +29,7 @@ class NotImplementedYetController: UIViewController, ENSideMenuDelegate {
     }
 
     @IBAction func poopTapped(sender: AnyObject) {
-        PropertiesHandler.getAllProperties()
+       // PropertiesHandler.getAllProperties()
     }
 
 }

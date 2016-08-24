@@ -25,6 +25,7 @@
                                     <fontDescription key="font" type="system" weight="thin" pointSize="15"/>
                                     <connections>
                                         <action selector="favoritesButtonTapped" destination="AgC-eL-Hgc" id="pqA-Fu-XcF"/>
+                                        <segue destination="HLR-y0-sQN" kind="push" id="fw1-fg-W1x"/>
                                     </connections>
                                 </button>
                             </items>
@@ -38,19 +39,22 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--PropertiesList-->
+        <!--Current Listings-->
         <scene sceneID="P8Y-XQ-L3v">
             <objects>
-                <controller identifier="PropertiesList" id="XiM-Td-2Q9" customClass="PropertiesListController" customModule="DH_Watch_Extension">
+                <controller identifier="PropertiesList" title="Current Listings" id="XiM-Td-2Q9" customClass="PropertiesListController" customModule="DH_Watch_Extension">
                     <items>
                         <table alignment="left" id="Rwc-ad-3DB">
                             <items>
                                 <tableRow identifier="PropertyRows" id="tfX-00-GbI" customClass="PropertyListRow" customModule="DH_Watch_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="XSr-xk-0Hz">
+                                    <group key="rootItem" width="1" height="60" alignment="left" animationDuration="2" layout="vertical" radius="7" spacing="0.0" id="XSr-xk-0Hz">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="Description" textAlignment="center" id="sby-nT-Gl0"/>
-                                            <label alignment="center" text="$100,000" textAlignment="center" id="goa-0n-yJ5"/>
+                                            <label alignment="center" verticalAlignment="center" text="$100,000" textAlignment="center" id="goa-0n-yJ5"/>
+                                            <label width="1" alignment="center" verticalAlignment="center" text="Description" textAlignment="center" id="sby-nT-Gl0">
+                                                <fontDescription key="font" type="system" weight="thin" pointSize="14"/>
+                                            </label>
                                         </items>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                     </group>
                                     <connections>
                                         <outlet property="group" destination="XSr-xk-0Hz" id="eLH-Cx-WAM"/>
@@ -66,7 +70,40 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="573" y="345"/>
+            <point key="canvasLocation" x="580" y="214"/>
+        </scene>
+        <!--My Favorites-->
+        <scene sceneID="MCn-XJ-bE4">
+            <objects>
+                <controller identifier="FavoritesList" title="My Favorites" id="HLR-y0-sQN" customClass="FavoritesListController" customModule="DH_Watch_Extension">
+                    <items>
+                        <table alignment="left" id="oaC-kh-W0v">
+                            <items>
+                                <tableRow identifier="FavoritesRows" id="uL4-rk-Dv9" customClass="FavoritesListRow" customModule="DH_Watch_Extension">
+                                    <group key="rootItem" width="1" height="60" alignment="left" layout="vertical" radius="7" id="oNc-HP-L7S">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="$100,000" textAlignment="center" id="Rvv-XU-L1n"/>
+                                            <label width="1" alignment="center" verticalAlignment="center" text="Description" textAlignment="center" id="eQW-cC-jic">
+                                                <fontDescription key="font" type="system" weight="thin" pointSize="14"/>
+                                            </label>
+                                        </items>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="group" destination="oNc-HP-L7S" id="kuO-sa-NBC"/>
+                                        <outlet property="propertyDescription" destination="eQW-cC-jic" id="pRX-Fr-TYQ"/>
+                                        <outlet property="propertyPrice" destination="Rvv-XU-L1n" id="03l-Uz-Hxv"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="propertiesTable" destination="oaC-kh-W0v" id="hGo-LK-GRm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="575" y="585"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -82,14 +119,14 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="245" y="899"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="DH_Watch" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="493" y="899"/>
         </scene>
     </scenes>
 </document>

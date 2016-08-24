@@ -36,6 +36,12 @@
 		5A6D84F91D6CFD6700951C09 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7362F3E1D413729006E661F /* UIColor.swift */; };
 		5A6D84FA1D6D011A00951C09 /* PropertiesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8183891D6CC499003918FC /* PropertiesHandler.swift */; };
 		5A6D84FC1D6D08FF00951C09 /* PropertyListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D84FB1D6D08FF00951C09 /* PropertyListRow.swift */; };
+		5A6D84FE1D6E0CB500951C09 /* SalesforceObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D84FD1D6E0CB500951C09 /* SalesforceObjectType.swift */; };
+		5A6D84FF1D6E0CC200951C09 /* SalesforceObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D84FD1D6E0CB500951C09 /* SalesforceObjectType.swift */; };
+		5A6D85021D6E1CA100951C09 /* WKInterfaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D85011D6E1CA100951C09 /* WKInterfaceImage.swift */; };
+		5A6D85041D6E1CDD00951C09 /* WKInterfaceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D85031D6E1CDD00951C09 /* WKInterfaceGroup.swift */; };
+		5A6D85061D6E216A00951C09 /* FavoritesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D85051D6E216A00951C09 /* FavoritesListController.swift */; };
+		5A6D85081D6E289900951C09 /* FavoritesListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D85071D6E289900951C09 /* FavoritesListRow.swift */; };
 		5A8183631D6CB0F4003918FC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8183611D6CB0F4003918FC /* Interface.storyboard */; };
 		5A8183651D6CB0F4003918FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8183641D6CB0F4003918FC /* Assets.xcassets */; };
 		5A81836C1D6CB0F4003918FC /* DH+Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A81836B1D6CB0F4003918FC /* DH+Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -141,6 +147,11 @@
 		5A5380AA1D4EA3DC004A418F /* NotImplementedYetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotImplementedYetController.swift; sourceTree = "<group>"; };
 		5A63281F1D5D4C78003D9386 /* SwiftyAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyAvatar.swift; sourceTree = "<group>"; };
 		5A6D84FB1D6D08FF00951C09 /* PropertyListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListRow.swift; sourceTree = "<group>"; };
+		5A6D84FD1D6E0CB500951C09 /* SalesforceObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesforceObjectType.swift; sourceTree = "<group>"; };
+		5A6D85011D6E1CA100951C09 /* WKInterfaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKInterfaceImage.swift; sourceTree = "<group>"; };
+		5A6D85031D6E1CDD00951C09 /* WKInterfaceGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKInterfaceGroup.swift; sourceTree = "<group>"; };
+		5A6D85051D6E216A00951C09 /* FavoritesListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesListController.swift; sourceTree = "<group>"; };
+		5A6D85071D6E289900951C09 /* FavoritesListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesListRow.swift; sourceTree = "<group>"; };
 		5A81835F1D6CB0F4003918FC /* DH+Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DH+Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8183621D6CB0F4003918FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5A8183641D6CB0F4003918FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -281,6 +292,15 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		5A6D85001D6E1C8300951C09 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A6D85011D6E1CA100951C09 /* WKInterfaceImage.swift */,
+				5A6D85031D6E1CDD00951C09 /* WKInterfaceGroup.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
 		5A8183601D6CB0F4003918FC /* DH+Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +314,7 @@
 		5A81836F1D6CB0F4003918FC /* DH+Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5A6D85001D6E1C8300951C09 /* extensions */,
 				5A8183721D6CB0F4003918FC /* InterfaceController.swift */,
 				5A8183741D6CB0F4003918FC /* ExtensionDelegate.swift */,
 				5A8183761D6CB0F4003918FC /* NotificationController.swift */,
@@ -302,6 +323,8 @@
 				5A8183701D6CB0F4003918FC /* Supporting Files */,
 				5A8183861D6CC101003918FC /* PropertiesListController.swift */,
 				5A6D84FB1D6D08FF00951C09 /* PropertyListRow.swift */,
+				5A6D85051D6E216A00951C09 /* FavoritesListController.swift */,
+				5A6D85071D6E289900951C09 /* FavoritesListRow.swift */,
 			);
 			path = "DH+Watch Extension";
 			sourceTree = "<group>";
@@ -415,6 +438,7 @@
 				5A53809D1D4E6E52004A418F /* UIDevice.swift */,
 				5A53809F1D4E6E7D004A418F /* UIImage.swift */,
 				5A5380A11D4E6ECA004A418F /* UIView.swift */,
+				5A6D84FD1D6E0CB500951C09 /* SalesforceObjectType.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -697,13 +721,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8183881D6CC261003918FC /* Property.swift in Sources */,
+				5A6D85021D6E1CA100951C09 /* WKInterfaceImage.swift in Sources */,
 				5A6D84FC1D6D08FF00951C09 /* PropertyListRow.swift in Sources */,
+				5A6D85061D6E216A00951C09 /* FavoritesListController.swift in Sources */,
 				5A8183771D6CB0F4003918FC /* NotificationController.swift in Sources */,
 				5A6D84F91D6CFD6700951C09 /* UIColor.swift in Sources */,
+				5A6D85041D6E1CDD00951C09 /* WKInterfaceGroup.swift in Sources */,
 				5A8183751D6CB0F4003918FC /* ExtensionDelegate.swift in Sources */,
 				5A8183871D6CC101003918FC /* PropertiesListController.swift in Sources */,
+				5A6D85081D6E289900951C09 /* FavoritesListRow.swift in Sources */,
 				5A8183731D6CB0F4003918FC /* InterfaceController.swift in Sources */,
 				5A6D84F81D6CFD1700951C09 /* JSON.swift in Sources */,
+				5A6D84FE1D6E0CB500951C09 /* SalesforceObjectType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +763,7 @@
 				5A5380A41D4E6F89004A418F /* Broker.swift in Sources */,
 				5AB7E2941D48233700ACBA5E /* UIImageView.swift in Sources */,
 				5A6D84FA1D6D011A00951C09 /* PropertiesHandler.swift in Sources */,
+				5A6D84FF1D6E0CC200951C09 /* SalesforceObjectType.swift in Sources */,
 				5AB7E2981D48371C00ACBA5E /* PropertiesTableViewCell.swift in Sources */,
 				5A5380921D4E6CA8004A418F /* JFCardSelectionViewController+JFFocusedCardViewDelegate.swift in Sources */,
 				5A53808D1D4E6CA8004A418F /* AccessoryIndicator.swift in Sources */,

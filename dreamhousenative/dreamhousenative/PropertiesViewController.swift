@@ -119,39 +119,6 @@ class PropertiesViewController: UIViewController, ENSideMenuDelegate {
         }
     }
     
-    func prepProperty(jsonRecord: JSON) -> Property {
-        let p : Property = Property()
-       //print(jsonRecord)
-        //propertyInfo
-        p.propertyId = jsonRecord["Id"].string
-        p.address = jsonRecord["Address__c"].string
-        p.city = jsonRecord["Id"].string
-        p.state = jsonRecord["State__c"].string
-        p.description = jsonRecord["Description__c"].string
-        p.pictureImageURL = jsonRecord["Picture__c"].string
-        p.price = jsonRecord["Price__c"].currency
-        p.thumbnailImageURL = jsonRecord["Thumbnail__c"].string
-        p.title = jsonRecord["Title__c"].string
-        p.zip = jsonRecord["Zip__c"].string
-        p.numberOfBaths = jsonRecord["Baths__c"].int
-        p.numberOfBeds = jsonRecord["Beds__c"].int
-        p.longitude = jsonRecord["Location__c"]["longitude"].double
-        p.latitude = jsonRecord["Location__c"]["latitude"].double
-        
-        //broker info
-        p.brokerId = jsonRecord["Broker__c"].string
-        p.brokerName = jsonRecord["Broker__r"]["Name"].string
-        p.brokerTitle = jsonRecord["Broker__r"]["Title__c"].string
-        p.brokerImageURL  = jsonRecord["Broker__r"]["Picture__c"].string
-        
-        if( jsonRecord["Favorites__r"] != nil) {
-           p.favoriteId =  jsonRecord["Favorites__r"]["records"][0]["Id"].string
-            p.isFavorite = true
-        }
-        
-        return p
-        
-    }
 }
 
 // MARK: -
@@ -175,7 +142,7 @@ extension PropertiesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("PropertyCell", forIndexPath: indexPath) as! PropertiesTableViewCell
         
         
-        cell.property = self.prepProperty(responseJSON["records"][indexPath.row])
+        cell.property = Property(jsonRecord: responseJSON["records"][indexPath.row])
         cell.isFavorite = cell.property!.isFavorite
     
         
