@@ -7,9 +7,11 @@ DH+ is a native Swift implementation of the <a href="http://dreamhouse.io">Dream
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/brokers-list.png?raw=true" width=270 />
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/sos-agent1.png?raw=true" width=270 />
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/sos-agent2.png?raw=true" width=270 />
+<img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/watch-main.png?raw=true" width=270 />
+<img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/watch-properties.png?raw=true" width=270 />
 
 ##Next Steps
-1. Implement Apple Watch app (30% complete started)
+1. Implement Apple Watch app (80% complete - just need to details screen)
 2. Add Salesforce Marketing Cloud Journey Builder support (not started)
 3. Write a bunch of tutorials (10% complete)
 
@@ -37,5 +39,5 @@ Customers can easily talk with a live broker at any time using the Service Cloud
 not yet implemented.
 
 ###Configure Apple Watch 
-not yet implemented.
+<img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/watch-properties.png?raw=true" width=270 />
 
