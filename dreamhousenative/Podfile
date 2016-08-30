@@ -26,8 +26,10 @@ target 'DHNative' do
   pod "GoogleMaterialIconFont"
   pod "DGElasticPullToRefresh"
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
-  pod 'SDWebImage', '~>3.8'
-  pod 'ZAlertView'
+ pod 'SDWebImage', '~>3.8'
+ pod 'ZAlertView'
+ pod 'UberRides'
+ pod 'FCAlertView', :git => 'https://github.com/nimati/FCAlertView'
 
   shared_pods
 

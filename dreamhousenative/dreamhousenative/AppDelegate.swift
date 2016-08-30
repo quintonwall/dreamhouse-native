@@ -10,6 +10,8 @@ import UIKit
 import ZAlertView
 import SwiftyJSON
 import WatchConnectivity
+import UberRides
+import FCAlertView
 
 //import SalesforceSDKCore
 
@@ -100,12 +102,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-              
-        //register for salesforce push notifications
-        //if(AppDefaults.isLoggedIn()) {
+        
+            //config push
             registerForPushNotifications(application)
             SFPushNotificationManager.sharedInstance().registerForRemoteNotifications()
-       // }
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
+        //config uber
+        Configuration.setRegion(.Default)
+        RidesAppDelegate.sharedInstance.application(application, didFinishLaunchingWithOptions: launchOptions)
+
+    
         return true
     }
     
@@ -124,27 +131,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
         let jsoninfo :JSON = JSON(userInfo)
+    
         
         
         if ( application.applicationState == UIApplicationState.Inactive
             || application.applicationState == UIApplicationState.Background  ) {
-            //no need to do anything extra here.
+            
         } else {
-            //but for times when we get a notification while the app is active, lets do something fun
-            let dialog = ZAlertView(title: "Heads Up",
-                                    message: jsoninfo["aps"]["alert"].string,
-                                    closeButtonText: "Okay",
-                                    closeButtonHandler: { alertView in
-                                        alertView.dismiss()
-                }
-            )
-            dialog.allowTouchOutsideToDismiss = false
-            //let attrStr = NSMutableAttributedString(string: "Are you sure you want to quit?")
-            //attrStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: NSMakeRange(10, 12))
-            //dialog.messageAttributedString = attrStr
-            dialog.show()
-
-    
+            let fcdialog = FCAlertView()
+            fcdialog.showAlertInView(self.window?.rootViewController, withTitle: "Heads Up!", withSubtitle: jsoninfo["aps"]["alert"].string, withCustomImage: UIImage(named: "Red-Favorite"), withDoneButtonTitle: "OK", andButtons: nil)
+            fcdialog.colorScheme = fcdialog.flatGreen
+            fcdialog.dismissOnOutsideTouch = true
+            
+            
+            //fcdialog.addButton("A title", withActionBlock: { })
+            
+            
         }
     }
 
@@ -160,6 +162,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
 
     func applicationDidBecomeActive(application: UIApplication) {

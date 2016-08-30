@@ -13,3 +13,4 @@
 #endif /* test_h */
 
 #import <SOS/SOS.h>
+#import <FCAlertView/FCAlertView.h>
