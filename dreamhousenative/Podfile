@@ -30,6 +30,7 @@ target 'DHNative' do
  pod 'ZAlertView'
  pod 'UberRides'
  pod 'FCAlertView', :git => 'https://github.com/nimati/FCAlertView'
+ pod 'PopCircleMenu', :git => 'https://github.com/luiyezheng/PopCircleMenu.git'
 
   shared_pods
 

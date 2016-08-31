@@ -94,7 +94,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Failed to get device token for push notification: \(error.description)")
     }
     
-    
+    @available(iOS 9, *)
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        
+        let handledURL = RidesAppDelegate.sharedInstance.application(app, openURL: url, sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String, annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+        
+        if (!handledURL) {
+            // Other URL parsing logic
+            print("handling uber rides")
+        }
+        
+        return true
+    }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         SFPushNotificationManager.sharedInstance().didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)

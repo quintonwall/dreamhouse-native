@@ -668,17 +668,19 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il5-R8-vmg" customClass="RideRequestButton">
-                                <rect key="frame" x="461" y="610" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJr-wp-MBg">
+                                <rect key="frame" x="180" y="604" width="240" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="0rl-3u-jCc"/>
+                                    <constraint firstAttribute="height" constant="40" id="eNk-q1-lvN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Y1o-HX-LZy" firstAttribute="top" secondItem="Het-pH-9DO" secondAttribute="bottom" id="0VT-oV-Wm9"/>
                             <constraint firstItem="CSl-9g-tx5" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="0f5-Ah-3kq"/>
                             <constraint firstItem="Y1o-HX-LZy" firstAttribute="top" secondItem="Het-pH-9DO" secondAttribute="bottom" constant="-65" id="2CJ-eE-ZCD"/>
-                            <constraint firstItem="il5-R8-vmg" firstAttribute="top" secondItem="JKa-85-3Qn" secondAttribute="bottom" constant="21" id="3JS-lt-Lp1"/>
                             <constraint firstItem="j6D-oJ-vgB" firstAttribute="width" secondItem="HlP-sO-UdO" secondAttribute="width" id="3Ox-l0-5d4"/>
                             <constraint firstItem="j6D-oJ-vgB" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="3dm-6P-YA4"/>
                             <constraint firstItem="g7S-3r-gZW" firstAttribute="width" secondItem="HlP-sO-UdO" secondAttribute="width" id="596-xR-d0D"/>
@@ -694,10 +696,10 @@
                             <constraint firstItem="NHM-Vy-xYl" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="PVZ-tU-w0i"/>
                             <constraint firstItem="6KZ-43-GWG" firstAttribute="top" secondItem="DcE-su-VCy" secondAttribute="bottom" id="Qka-HO-FgW"/>
                             <constraint firstItem="Hrk-7q-CqI" firstAttribute="centerX" secondItem="g7S-3r-gZW" secondAttribute="centerX" id="Rbi-7f-9Hz"/>
+                            <constraint firstItem="xJr-wp-MBg" firstAttribute="top" secondItem="Hrk-7q-CqI" secondAttribute="bottom" constant="10" id="Tse-gO-Mw3"/>
                             <constraint firstItem="CSl-9g-tx5" firstAttribute="top" secondItem="NHM-Vy-xYl" secondAttribute="bottom" id="Vie-Od-yCU"/>
                             <constraint firstItem="rmE-CI-33Z" firstAttribute="width" secondItem="g7S-3r-gZW" secondAttribute="width" id="W7o-VH-jmk"/>
                             <constraint firstItem="g7S-3r-gZW" firstAttribute="centerY" secondItem="HlP-sO-UdO" secondAttribute="centerY" id="b8s-jJ-Eee"/>
-                            <constraint firstItem="il5-R8-vmg" firstAttribute="leading" secondItem="g7S-3r-gZW" secondAttribute="trailing" constant="-139" id="bDa-IN-8gQ"/>
                             <constraint firstItem="CSl-9g-tx5" firstAttribute="top" secondItem="NHM-Vy-xYl" secondAttribute="bottom" id="c0D-87-G00"/>
                             <constraint firstItem="j6D-oJ-vgB" firstAttribute="top" secondItem="Het-pH-9DO" secondAttribute="bottom" id="dof-Da-Lz9"/>
                             <constraint firstItem="g7S-3r-gZW" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="iF8-SY-d4w"/>
@@ -712,6 +714,7 @@
                             <constraint firstItem="j6D-oJ-vgB" firstAttribute="top" secondItem="Y1o-HX-LZy" secondAttribute="bottom" id="wHn-oJ-Rt0"/>
                             <constraint firstItem="6KZ-43-GWG" firstAttribute="width" secondItem="HlP-sO-UdO" secondAttribute="width" id="xhm-lZ-zmZ"/>
                             <constraint firstItem="6KZ-43-GWG" firstAttribute="centerX" secondItem="HlP-sO-UdO" secondAttribute="centerX" id="yLF-kk-K1I"/>
+                            <constraint firstItem="xJr-wp-MBg" firstAttribute="centerX" secondItem="g7S-3r-gZW" secondAttribute="centerX" id="zYH-ll-1y7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -746,10 +749,10 @@
                         <outlet property="numBathsLabel" destination="X3W-iw-Wgy" id="ugL-L4-NZb"/>
                         <outlet property="numBedroomsLabel" destination="1KI-JE-mC3" id="3Nv-1n-YEj"/>
                         <outlet property="propertyImage" destination="Het-pH-9DO" id="xt8-mo-FEO"/>
-                        <outlet property="requestUberButton" destination="il5-R8-vmg" id="GKQ-Ei-k2W"/>
                         <outlet property="shareButton" destination="JKa-85-3Qn" id="1XO-4m-9yX"/>
                         <outlet property="titleLabel" destination="53J-HD-ICC" id="mQg-VW-dpA"/>
                         <outlet property="titleView" destination="j6D-oJ-vgB" id="JQP-hx-uoD"/>
+                        <outlet property="uberView" destination="xJr-wp-MBg" id="GBB-cY-C46"/>
                         <segue destination="PG2-oX-8Pm" kind="show" identifier="BrokerDetails" id="kh3-u2-0FV"/>
                     </connections>
                 </viewController>

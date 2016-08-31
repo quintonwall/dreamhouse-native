@@ -11,6 +11,8 @@ import ENSwiftSideMenu
 import SDWebImage
 import MapKit
 import Spring
+import UberRides
+import CoreLocation
 
 
 
@@ -19,6 +21,7 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     var property: Property?
     let regionRadius: CLLocationDistance = 150
     var propertyLocation : CLLocation?
+    let locationManger:CLLocationManager = CLLocationManager()
     
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var bathroomView: UIView!
@@ -40,11 +43,21 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
     @IBOutlet weak var brokerTitleLabel: UILabel!
     @IBOutlet weak var brokerProfileImage: UIImageView!
     
+
     //button bar
     @IBOutlet weak var liveAgentButton: SpringButton!
     @IBOutlet weak var shareButton: SpringButton!
     @IBOutlet weak var favoriteButton: SpringButton!
     @IBOutlet weak var brokerDetailsButton: UIButton!
+    var uberButton: RideRequestButton?
+    
+    @IBOutlet weak var uberView: UIView!
+    
+    let items: [(icon: String, color: UIColor, text: String)] = [
+        ("car-logo-small", UIColor(red:0.22, green:0.74, blue:0, alpha:1), "Uber"),
+        ("food-logo-small", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1), "Yelp!"),
+       
+        ]
     
     
     override func viewWillAppear(animated: Bool) {
@@ -87,6 +100,7 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
        self.backgroundImage.sd_setImageWithURL(NSURL(string: property!.pictureImageURL!) )
         backgroundImage.blurImageLightly()
         
+     
     }
     
     override func viewDidLoad() {
@@ -98,8 +112,22 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         propertyLocation = CLLocation(latitude: self.property!.latitude!, longitude: self.property!.longitude!)
         centerMapOnLocation(propertyLocation!)
         
+        addUberButton()
+        
+        
+        locationManger.delegate = self
+        
+        if !checkLocationServices() {
+            locationManger.requestWhenInUseAuthorization()
+        }
+        
     }
     
+    private func addUberButton() {
+        uberButton = buildRideRequestWidgetButton(.Native)
+        uberButton?.colorStyle = .White
+        uberView.addSubview(uberButton!)
+    }
     
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
@@ -111,11 +139,41 @@ class PropertyDetailsViewController : UIViewController, ENSideMenuDelegate {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    private func buildRideRequestWidgetButton(loginType: LoginType) -> RideRequestButton {
+        let loginManager = LoginManager(loginType: loginType)
+        let requestBehavior = RideRequestViewRequestingBehavior(presentingViewController: self, loginManager: loginManager)
+        requestBehavior.modalRideRequestViewController.delegate = self
+        
+        let builder = RideParametersBuilder()
+        builder.setPickupToCurrentLocation()
+        //builder.setDropoffLocation(propertyLocation!)
+        builder.setDropoffLocation(propertyLocation!, address: property?.address)
+        let rideParameters = builder.build()
+        let btn  = RideRequestButton(rideParameters: rideParameters, requestingBehavior: requestBehavior)
+        return btn
+    }
+    
+    
+    private func checkLocationServices() -> Bool {
+        let locationEnabled = CLLocationManager.locationServicesEnabled()
+        let locationAuthorization = CLLocationManager.authorizationStatus()
+        let locationAuthorized = locationAuthorization == .AuthorizedWhenInUse || locationAuthorization == .AuthorizedAlways
+        
+        return locationEnabled && locationAuthorized
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "BrokerDetails" {
             let brokersViewController = segue.destinationViewController as! BrokerSelectionViewController
             brokersViewController.brokerId = self.property?.brokerId
         }
+    }
+    
+    private func showMessage(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okayAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(okayAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     
@@ -242,3 +300,60 @@ extension PropertyDetailsViewController : SOSDelegate {
     }
 
 }
+
+//MARK: ModalViewControllerDelegate
+
+extension PropertyDetailsViewController : ModalViewControllerDelegate {
+    func modalViewControllerDidDismiss(modalViewController: ModalViewController) {
+        print("did dismiss")
+    }
+    
+    func modalViewControllerWillDismiss(modalViewController: ModalViewController) {
+        print("will dismiss")
+    }
+}
+
+//MARK: CLLocationManagerDelegate
+
+extension PropertyDetailsViewController : CLLocationManagerDelegate {
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .Denied || status == .Restricted {
+            showMessage("Location Services disabled.")
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManger.stopUpdatingLocation()
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        locationManger.stopUpdatingLocation()
+        showMessage("There was an error locating you.")
+    }
+}
+
+extension PropertyDetailsViewController : RideRequestViewControllerDelegate {
+    func rideRequestViewController(rideRequestViewController: RideRequestViewController, didReceiveError error: NSError) {
+        let errorType = RideRequestViewErrorType(rawValue: error.code) ?? .Unknown
+        // Handle error here
+        switch errorType {
+        case .AccessTokenMissing:
+            print(error.description)
+            break
+        case .AccessTokenExpired:
+            print(error.description)
+            break
+        case .NetworkError:
+            print(error.description)
+            break
+        case .NotSupported:
+            print(error.description)
+            break
+        case .Unknown:
+            print(error.description)
+            break
+        }
+    }
+}
+
