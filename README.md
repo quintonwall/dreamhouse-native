@@ -35,9 +35,13 @@ Customers can easily talk with a live broker at any time using the Service Cloud
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/sos-agent1.png?raw=true" width=270 />
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/sos-agent2.png?raw=true" width=270 />
 
-###Configure Salesforce Marketing Cloud Push Notifications
-not yet implemented.
 
 ###Configure Apple Watch 
 <img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/watch-properties.png?raw=true" width=270 />
 
+###Configure Uber Rides
+DH+ now allows customers to book a ride via the Uber Rides SDK to tour a property. This functionality leverages the App Cloud geo-location field types for longitude and latitude values.
+<img src="https://github.com/quintonwall/dreamhouse-native/blob/master/graphics/screenshots/uber.png?raw=true" width=270 />
+
+###Configure Salesforce Marketing Cloud Push Notifications
+not yet implemented. Currently using App Cloud push notifications via ProcessBuilder invocable methods
